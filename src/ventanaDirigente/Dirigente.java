@@ -40,7 +40,7 @@ public class Dirigente extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -51,7 +51,7 @@ public class Dirigente extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -331,9 +331,11 @@ public class Dirigente extends JFrame {
 		creacionUsuario.add(panel);
 		
 		JLabel fondo = new JLabel("New label");
-		fondo.setIcon(new ImageIcon("C:\\Users\\darku\\Desktop\\Multidisciplinar\\Ventanas\\src\\image\\despachoC.jpg"));
+		fondo.setIcon(new ImageIcon("C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/despachoC.jpg"));
 		fondo.setBounds(0, 0, 603, 510);
 		contentPane.add(fondo);
+		
+		setVisible(true);
 		
 		crearFichero.addActionListener(new ActionListener() {
 			

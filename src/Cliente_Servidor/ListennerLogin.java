@@ -8,6 +8,7 @@ import java.io.IOException;
 
 import liverpool.Representante;
 import liverpool.login;
+import ventanaDirigente.Dirigente;
 
 public class ListennerLogin implements ActionListener {
 	private String nombreUsuario, pass;
@@ -38,6 +39,7 @@ public class ListennerLogin implements ActionListener {
 				if (tipoUsuario.equals("Dirigente")) {
 					// Mostrar nueva ventana
 					L.hacerInvisible();
+					Dirigente D = new Dirigente();
 					break;
 				} else if (tipoUsuario.equals("Representante")) {
 					// Mostrar nueva ventana
