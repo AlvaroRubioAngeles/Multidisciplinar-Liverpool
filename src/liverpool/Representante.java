@@ -24,8 +24,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JScrollPane;
 /**
  * Clase Representante
- * Descripción: Esta ventana es para el representante.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Esta ventana es para el representante.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 17/12/2020
  */
@@ -90,7 +90,7 @@ public class Representante extends JFrame {
 		
 		JLabel lblNewLabel_1 = new JLabel("");
 		lblNewLabel_1.setHorizontalAlignment(SwingConstants.CENTER);
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\Grado Superior Multiplataforma\\Nueva carpeta\\Trabajo_Multidisciplinar\\src\\image\\liverescudo.jpg"));
+		lblNewLabel_1.setIcon(new ImageIcon("C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/liverescudo.jpg"));
 		lblNewLabel_1.setBounds(32, 24, 526, 389);
 		contentPane.add(lblNewLabel_1);
 		
@@ -175,7 +175,7 @@ public class Representante extends JFrame {
 		panel_3.add(btnCrearCont);
 		
 		JLabel lblNewLabel = new JLabel("New label");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\Grado Superior Multiplataforma\\Nueva carpeta\\Trabajo_Multidisciplinar\\src\\image\\contrato.jpg"));
+		lblNewLabel.setIcon(new ImageIcon("C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/contrato.jpg"));
 		lblNewLabel.setBounds(0, 0, 590, 426);
 		contentPane.add(lblNewLabel);
 		setVisible(true);

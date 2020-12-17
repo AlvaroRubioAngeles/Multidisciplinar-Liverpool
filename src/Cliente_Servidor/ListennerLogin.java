@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
+
+import liverpool.Representante;
 import liverpool.login;
 
 public class ListennerLogin implements ActionListener {
@@ -24,7 +26,6 @@ public class ListennerLogin implements ActionListener {
 		// Obtencion de las credenciales introducidas por el usuario
 		nombreUsuario = L.getTextUsuario().getText();
 		pass = L.getTextPassword().getText();
-		L.mostrarCarga();
 		// Envio de credenciales al servidor en forma de una cadena de texto separada
 		// por una barra de porcentaje.
 		try {
@@ -36,20 +37,18 @@ public class ListennerLogin implements ActionListener {
 				tipoUsuario = dataIn.readUTF();
 				if (tipoUsuario.equals("Dirigente")) {
 					// Mostrar nueva ventana
-					L.ocultarCarga();
 					L.hacerInvisible();
 					break;
 				} else if (tipoUsuario.equals("Representante")) {
 					// Mostrar nueva ventana
-					L.ocultarCarga();
 					L.hacerInvisible();
+					Representante R = new Representante();
 					break;
 				}
 				else if (tipoUsuario.equals("*") | tipoUsuario.equals("")) {
 					// Mostrar errores
 					L.mostrarError();
 					L.limpiarTextos();
-					L.ocultarCarga();
 					break;
 				}
 			}
