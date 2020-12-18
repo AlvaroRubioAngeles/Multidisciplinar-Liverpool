@@ -6,17 +6,20 @@ import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 
+import javax.swing.JOptionPane;
+
 import liverpool.Representante;
-import liverpool.login;
+import liverpool.VentanaError;
+import liverpool.Login;
 import ventanaDirigente.Dirigente;
 
 public class ListennerLogin implements ActionListener {
 	private String nombreUsuario, pass;
 	private DataOutputStream dataOut;
 	private DataInputStream dataIn;
-	private login L;
+	private Login L;
 
-	public ListennerLogin(DataOutputStream dataOut, DataInputStream dataIn, login L) {
+	public ListennerLogin(DataOutputStream dataOut, DataInputStream dataIn, Login L) {
 		this.dataOut = dataOut;
 		this.dataIn = dataIn;
 		this.L = L;
@@ -55,8 +58,7 @@ public class ListennerLogin implements ActionListener {
 				}
 			}
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			VentanaError ventana = new VentanaError("Error de conexion con el servidor");
 		}
 
 	}

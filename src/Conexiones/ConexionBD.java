@@ -6,6 +6,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
+import javax.swing.JOptionPane;
+
+import liverpool.VentanaError;
+
 public class ConexionBD {
 	private Connection conexion;
 	private Statement sentencia;
@@ -16,11 +20,9 @@ public class ConexionBD {
 			conexion = DriverManager.getConnection("jdbc:mysql://192.168.11.158/liverpool", "Fran", "1");
 			sentencia = conexion.createStatement();
 		} catch (ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			VentanaError ventana = new VentanaError("<html><body>Driver de conexión incorrecto<br>Contacte con el administrador del sistema</body></html>");
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			VentanaError ventana = new VentanaError("Error al conectar con la base de datos");
 		}
 
 	}
@@ -39,8 +41,7 @@ public class ConexionBD {
 			}
 			return tipo;
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+			//Usuario y contraseña no existen
 			return "*";
 		}
 	}

@@ -38,7 +38,7 @@ import java.awt.Component;
  * @author Gabriel Vizcaino S�nchez
  * @version 1.0 Fecha 14/12/2020
  */
-public class login extends JFrame {
+public class Login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textUsuario;
@@ -50,7 +50,7 @@ public class login extends JFrame {
 	/**
 	 * Creaci�n de la ventana de login.
 	 */
-	public login() {
+	public Login() {
 		setTitle("You'll never walk alone");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 656, 401);
