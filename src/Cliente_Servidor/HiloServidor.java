@@ -26,6 +26,7 @@ public class HiloServidor extends Thread {
 			DataOutputStream dataOut = new DataOutputStream(socket.getOutputStream());
 			/*
 			 * Bucle que espera a que el usuario envie sus credenciales para comprobarlas
+			 * O que realizae una operacion para guardar en log en la base de datos
 			 */
 			while (true) {
 				String recibido = "";
@@ -41,6 +42,7 @@ public class HiloServidor extends Thread {
 						dataOut.writeUTF("*");
 					}
 				}
+				//Guardar operacion realizada en la base de datos SQL
 				else if (recibido.substring(recibido.lastIndexOf("%") + 1).equals("2")) {
 					
 				}

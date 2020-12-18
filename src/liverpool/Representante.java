@@ -42,6 +42,8 @@ public class Representante extends JFrame {
 	private JButton btnVer;
 	private JFileChooser fileChooser;
 	private JButton btnCrearCont;
+	private JPanel panel_2;
+	private JPanel panel_3;
 
 	/**
 	 * Crear la ventana de representante.
@@ -110,7 +112,7 @@ public class Representante extends JFrame {
 		fileChooser = new JFileChooser();
 		scrollPane.setViewportView(fileChooser);
 		
-		JPanel panel_2 = new JPanel();
+		panel_2 = new JPanel();
 		panel_2.setBackground(new Color(255, 255, 255));
 		panel_2.setBorder(new LineBorder(new Color(255, 255, 255), 2, true));
 		panel.add(panel_2, BorderLayout.CENTER);
@@ -161,7 +163,7 @@ public class Representante extends JFrame {
 		panel_2.add(textAge);
 		textAge.setColumns(10);
 		
-		JPanel panel_3 = new JPanel();
+		panel_3 = new JPanel();
 		panel_3.setBorder(new MatteBorder(2, 2, 2, 2, (Color) Color.WHITE));
 		panel_3.setBackground(new Color(255, 51, 51));
 		panel.add(panel_3, BorderLayout.SOUTH);

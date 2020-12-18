@@ -37,12 +37,13 @@ public class ListennerLogin implements ActionListener {
 			while (true) {
 				tipoUsuario = dataIn.readUTF();
 				if (tipoUsuario.equals("Dirigente")) {
-					// Mostrar nueva ventana
+					// Mostrar nueva ventana de Dirigente
 					L.hacerInvisible();
 					Dirigente D = new Dirigente();
+					//Aqui van los metodos de la ventana dirigente
 					break;
 				} else if (tipoUsuario.equals("Representante")) {
-					// Mostrar nueva ventana
+					// Mostrar nueva ventana de Representante
 					L.hacerInvisible();
 					Representante R = new Representante();
 					break;

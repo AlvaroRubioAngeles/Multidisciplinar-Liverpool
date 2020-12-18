@@ -27,6 +27,9 @@ import java.awt.Font;
 import java.awt.Color;
 import javax.swing.JList;
 import javax.swing.JFileChooser;
+import javax.swing.JTextArea;
+import javax.swing.border.BevelBorder;
+import javax.swing.border.LineBorder;
 
 public class Dirigente extends JFrame {
 
@@ -36,11 +39,13 @@ public class Dirigente extends JFrame {
 	private JTextField correo;
 	private JTextField nomUsuarioB;
 	private JTextField nomArchivoB;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
 	 */
-	/*public static void main(String[] args) {
+	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -51,7 +56,7 @@ public class Dirigente extends JFrame {
 				}
 			}
 		});
-	}*/
+	}
 
 	/**
 	 * Create the frame.
@@ -123,14 +128,95 @@ public class Dirigente extends JFrame {
 		contentPane.setLayout(null);
 		
 		JPanel contenido = new JPanel();
-		contenido.setBounds(15, 16, 556, 387);
+		contenido.setBounds(15, 16, 575, 415);
 		contentPane.add(contenido);
 		contenido.setVisible(false);
 		contenido.setLayout(null);
 		
+		JPanel Smtp = new JPanel();
+		Smtp.setBackground(new Color(255, 51, 51));
+		Smtp.setBounds(0, 0, 575, 415);
+		contenido.add(Smtp);
+		Smtp.setLayout(null);
+		
+		JPanel panel_5 = new JPanel();
+		panel_5.setBackground(Color.WHITE);
+		panel_5.setBounds(12, 13, 418, 389);
+		Smtp.add(panel_5);
+		panel_5.setLayout(null);
+		
+		JLabel lblDirecionMail = new JLabel("Direcion Mail:");
+		lblDirecionMail.setBorder(new LineBorder(new Color(255, 51, 51), 2));
+		lblDirecionMail.setForeground(new Color(255, 51, 0));
+		lblDirecionMail.setBounds(12, 13, 90, 21);
+		panel_5.add(lblDirecionMail);
+		
+		JLabel lblNewLabel_6 = new JLabel("Asunto:");
+		lblNewLabel_6.setBorder(new LineBorder(new Color(255, 51, 51), 2));
+		lblNewLabel_6.setForeground(new Color(255, 51, 0));
+		lblNewLabel_6.setBounds(12, 54, 62, 21);
+		panel_5.add(lblNewLabel_6);
+		
+		JLabel lblNewLabel_7 = new JLabel("Mensaje:");
+		lblNewLabel_7.setBorder(new LineBorder(new Color(255, 51, 51), 2));
+		lblNewLabel_7.setForeground(new Color(255, 51, 0));
+		lblNewLabel_7.setBounds(12, 95, 63, 25);
+		panel_5.add(lblNewLabel_7);
+		
+		textField = new JTextField();
+		textField.setBorder(new LineBorder(new Color(255, 51, 51), 2));
+		textField.setBounds(125, 10, 281, 24);
+		panel_5.add(textField);
+		textField.setColumns(10);
+		
+		textField_1 = new JTextField();
+		textField_1.setBorder(new LineBorder(new Color(255, 51, 51), 2));
+		textField_1.setBounds(102, 54, 304, 21);
+		panel_5.add(textField_1);
+		textField_1.setColumns(10);
+		
+		JTextArea textArea = new JTextArea();
+		textArea.setBorder(new LineBorder(new Color(255, 51, 51), 2));
+		textArea.setBounds(12, 129, 394, 247);
+		panel_5.add(textArea);
+		
+		JLabel lblNewLabel_8 = new JLabel("");
+		lblNewLabel_8.setIcon(new ImageIcon(Dirigente.class.getResource("/image/escudo.png")));
+		lblNewLabel_8.setBounds(463, 13, 100, 110);
+		Smtp.add(lblNewLabel_8);
+		
+		JButton btnNewButton = new JButton("Enviar");
+		btnNewButton.setForeground(new Color(255, 51, 51));
+		btnNewButton.setBounds(458, 368, 105, 34);
+		Smtp.add(btnNewButton);
+		
+		JPanel creacionFichero = new JPanel();
+		creacionFichero.setBackground(new Color(255, 51, 51));
+		creacionFichero.setBounds(0, 0, 575, 415);
+		contenido.add(creacionFichero);
+		creacionFichero.setLayout(null);
+		
+		JPanel panel_3 = new JPanel();
+		panel_3.setBackground(Color.WHITE);
+		panel_3.setBounds(15, 16, 357, 355);
+		creacionFichero.add(panel_3);
+		panel_3.setLayout(null);
+		
+		JFileChooser fileFichero = new JFileChooser();
+		fileFichero.setBounds(0, 0, 357, 355);
+		panel_3.add(fileFichero);
+		
+		JButton btnCrearFichero = new JButton("Crear");
+		btnCrearFichero.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		btnCrearFichero.setBackground(new Color(255, 255, 255));
+		btnCrearFichero.setForeground(new Color(255, 51, 51));
+		btnCrearFichero.setBounds(388, 16, 153, 41);
+		creacionFichero.add(btnCrearFichero);
+		creacionFichero.setVisible(false);
+		
 		JPanel creacionArchivo = new JPanel();
 		creacionArchivo.setBackground(new Color(255, 51, 51));
-		creacionArchivo.setBounds(0, 0, 556, 387);
+		creacionArchivo.setBounds(0, 0, 575, 415);
 		contenido.add(creacionArchivo);
 		creacionArchivo.setLayout(null);
 		
@@ -153,33 +239,9 @@ public class Dirigente extends JFrame {
 		creacionArchivo.add(btnCrearArchivo);
 		creacionArchivo.setVisible(false);
 		
-		JPanel creacionFichero = new JPanel();
-		creacionFichero.setBackground(new Color(255, 51, 51));
-		creacionFichero.setBounds(0, 0, 556, 387);
-		contenido.add(creacionFichero);
-		creacionFichero.setLayout(null);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(Color.WHITE);
-		panel_3.setBounds(15, 16, 357, 355);
-		creacionFichero.add(panel_3);
-		panel_3.setLayout(null);
-		
-		JFileChooser fileFichero = new JFileChooser();
-		fileFichero.setBounds(0, 0, 357, 355);
-		panel_3.add(fileFichero);
-		
-		JButton btnCrearFichero = new JButton("Crear");
-		btnCrearFichero.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnCrearFichero.setBackground(new Color(255, 255, 255));
-		btnCrearFichero.setForeground(new Color(255, 51, 51));
-		btnCrearFichero.setBounds(388, 16, 153, 41);
-		creacionFichero.add(btnCrearFichero);
-		creacionFichero.setVisible(false);
-		
 		JPanel borradoArchivo = new JPanel();
 		borradoArchivo.setBackground(new Color(255, 51, 51));
-		borradoArchivo.setBounds(0, 0, 556, 387);
+		borradoArchivo.setBounds(0, 0, 575, 415);
 		contenido.add(borradoArchivo);
 		borradoArchivo.setLayout(null);
 		borradoArchivo.setVisible(false);
@@ -223,7 +285,7 @@ public class Dirigente extends JFrame {
 		
 		JPanel borradoUsuario = new JPanel();
 		borradoUsuario.setBackground(new Color(255, 51, 51));
-		borradoUsuario.setBounds(0, 0, 556, 387);
+		borradoUsuario.setBounds(0, 0, 575, 415);
 		contenido.add(borradoUsuario);
 		borradoUsuario.setLayout(null);
 		borradoUsuario.setVisible(false);
@@ -267,7 +329,7 @@ public class Dirigente extends JFrame {
 		
 		JPanel creacionUsuario = new JPanel();
 		creacionUsuario.setBackground(new Color(255, 51, 51));
-		creacionUsuario.setBounds(0, 0, 556, 387);
+		creacionUsuario.setBounds(0, 0, 575, 415);
 		contenido.add(creacionUsuario);
 		creacionUsuario.setLayout(null);
 		creacionUsuario.setVisible(false);

@@ -31,6 +31,7 @@ import java.awt.Font;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import java.awt.Component;
+import javax.swing.JPasswordField;
 
 /**
  * Clase login Descripci�n: Esta ventana es el inicio de sesi�n de los usuarios.
@@ -42,7 +43,7 @@ public class login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textUsuario;
-	private JTextField textPassword;
+	private JPasswordField textPassword;
 	private JButton btnInicio;
 	private JButton btnAcerca;
 	private JButton btnManual;
@@ -124,7 +125,7 @@ public class login extends JFrame {
 		lblPassword.setFont(new Font("Lucida Console", Font.BOLD, 20));
 		panel_1.add(lblPassword);
 
-		textPassword = new JTextField();
+		textPassword = new JPasswordField();
 		panel_1.add(textPassword);
 		textPassword.setColumns(10);
 
@@ -146,8 +147,7 @@ public class login extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBackground(new Color(255, 51, 51));
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/escudo.png"));
+		lblNewLabel.setIcon(new ImageIcon("C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/escudo.png"));
 		panel_4.add(lblNewLabel);
 
 		JPanel panel_3 = new JPanel();
@@ -164,8 +164,8 @@ public class login extends JFrame {
 		panel_3.add(lblLogin);
 
 		JLabel lblImagenPrincipal = new JLabel("");
-		lblImagenPrincipal.setIcon(new ImageIcon(
-				"C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/Liverpool.jpg"));
+		lblImagenPrincipal
+				.setIcon(new ImageIcon("C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/Liverpool.jpg"));
 		lblImagenPrincipal.setBounds(0, 0, 638, 354);
 		contentPane.add(lblImagenPrincipal);
 		setVisible(true);
@@ -175,14 +175,18 @@ public class login extends JFrame {
 		textUsuario.setText("");
 		textPassword.setText("");
 	}
-	
+
 	public void mostrarError() {
-		JOptionPane.showMessageDialog(null, "Error. Usuario o Contrase�a invalidas", "Inicio de sesi�n",
+		JOptionPane.showMessageDialog(null, "Error. Usuario o Contraseña invalidas", "Inicio de sesión",
 				JOptionPane.WARNING_MESSAGE);
 	}
 
 	public void hacerInvisible() {
 		setVisible(false);
+	}
+
+	public void hacerVisible() {
+		setVisible(true);
 	}
 
 	// Getters y Setters
@@ -198,7 +202,7 @@ public class login extends JFrame {
 		return textPassword;
 	}
 
-	public void setTextPassword(JTextField textPassword) {
+	public void setTextPassword(JPasswordField textPassword) {
 		this.textPassword = textPassword;
 	}
 
