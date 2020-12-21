@@ -31,6 +31,7 @@ import java.awt.Font;
 import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import java.awt.Component;
+import javax.swing.JPasswordField;
 
 /**
  * Clase login Descripci�n: Esta ventana es el inicio de sesi�n de los usuarios.
@@ -42,7 +43,7 @@ public class login extends JFrame {
 
 	private JPanel contentPane;
 	private JTextField textUsuario;
-	private JTextField textPassword;
+	private JPasswordField textPassword;
 	private JButton btnInicio;
 	private JButton btnAcerca;
 	private JButton btnManual;
@@ -124,7 +125,7 @@ public class login extends JFrame {
 		lblPassword.setFont(new Font("Lucida Console", Font.BOLD, 20));
 		panel_1.add(lblPassword);
 
-		textPassword = new JTextField();
+		textPassword = new JPasswordField();
 		panel_1.add(textPassword);
 		textPassword.setColumns(10);
 
@@ -198,7 +199,7 @@ public class login extends JFrame {
 		return textPassword;
 	}
 
-	public void setTextPassword(JTextField textPassword) {
+	public void setTextPassword(JPasswordField textPassword) {
 		this.textPassword = textPassword;
 	}
 
