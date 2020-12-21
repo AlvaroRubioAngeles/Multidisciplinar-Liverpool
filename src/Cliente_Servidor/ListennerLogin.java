@@ -40,8 +40,7 @@ public class ListennerLogin implements ActionListener {
 					// Mostrar nueva ventana
 					L.hacerInvisible();
 					Dirigente D = new Dirigente(L);
-					for (int i = 0; i < D.getBotones().size(); i++) {	
-						
+					for (int i = 0; i < D.getBotones().size(); i++) {
 						D.getBotones().get(i).addActionListener(new ListenerDirigente(dataOut, dataIn, D, L));
 					}
 					break;

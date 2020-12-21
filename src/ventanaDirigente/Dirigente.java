@@ -1,51 +1,45 @@
 package ventanaDirigente;
 
-import java.awt.BorderLayout;
-import java.awt.EventQueue;
+import java.awt.Color;
+import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.ArrayList;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.border.EmptyBorder;
-import javax.swing.JLabel;
 import javax.swing.ImageIcon;
-import javax.swing.JTable;
-import javax.swing.table.DefaultTableModel;
-
 import liverpool.login;
 
 import javax.swing.JButton;
-import javax.swing.JFormattedTextField;
-import javax.swing.JScrollBar;
-import javax.swing.JScrollPane;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JMenu;
-import javax.swing.JTextField;
-import javax.swing.JSpinner;
-import javax.swing.JSpinner.DefaultEditor;
-import javax.swing.SpinnerListModel;
-import java.awt.Font;
-import java.awt.Color;
-import javax.swing.JList;
 import javax.swing.JFileChooser;
+
 import javax.swing.JTextArea;
 import javax.swing.border.LineBorder;
+
+import javax.swing.JFormattedTextField;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JList;
+import javax.swing.JMenu;
+import javax.swing.JMenuBar;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JSpinner;
+import javax.swing.JTextField;
+import javax.swing.SpinnerListModel;
+import javax.swing.border.EmptyBorder;
+
 
 public class Dirigente extends JFrame {
 
 	private login L;
 	
 	private JPanel contentPane;
-	private JTextField nombre;
-	private JTextField apellido;
-	private JTextField correo;
-	private JTextField nomUsuarioB;
-	private JTextField nomArchivoB;
-	private JTextField campoDestinatario;
-	private JTextField asunto;
-	private JTextArea mensaje;
+	private JTextField nombre, apellido, correo, nomUsuarioB, nomArchivoB,campoDestinatario, asunto;
+	private JButton btnCrearArchivo, btnCrearFichero,
+	btnBorrarArchivo, btnBorrarUsuario, crearUsu, cerrarSesion;
+	JTextArea mensaje;
+	
+	private ArrayList<JButton> botones;
 
 	/**
 	 * Launch the application.
@@ -133,8 +127,13 @@ public class Dirigente extends JFrame {
 		logout.setForeground(Color.WHITE);
 		menuBar.add(logout);
 		
-		JButton btnSalir = new JButton("Salir");
-		logout.add(btnSalir);
+
+		cerrarSesion = new JButton("New button");
+		cerrarSesion.setFont(new Font("Segoe UI", Font.BOLD, 16));
+		cerrarSesion.setForeground(new Color(255, 255, 255));
+		cerrarSesion.setBackground(new Color(255, 51, 51));
+		logout.add(cerrarSesion);
+
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -211,7 +210,12 @@ public class Dirigente extends JFrame {
 		fileArchivo.setBounds(0, 0, 355, 355);
 		panel_4.add(fileArchivo);
 
+
 		JButton btnCrearArchivo = new JButton("Crear");
+
+		
+		btnCrearArchivo = new JButton("Crear");
+
 		btnCrearArchivo.setBackground(new Color(255, 255, 255));
 		btnCrearArchivo.setForeground(new Color(255, 51, 102));
 		btnCrearArchivo.setFont(new Font("Segoe UI", Font.BOLD, 16));
@@ -235,7 +239,12 @@ public class Dirigente extends JFrame {
 		fileFichero.setBounds(0, 0, 357, 355);
 		panel_3.add(fileFichero);
 
+
 		JButton btnCrearFichero = new JButton("Crear");
+
+		
+		btnCrearFichero = new JButton("Crear");
+
 		btnCrearFichero.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		btnCrearFichero.setBackground(new Color(255, 255, 255));
 		btnCrearFichero.setForeground(new Color(255, 51, 51));
@@ -267,7 +276,12 @@ public class Dirigente extends JFrame {
 		borradoArchivo.add(nomArchivoB);
 		nomArchivoB.setColumns(10);
 
+
 		JButton btnBorrarArchivo = new JButton("Eliminar");
+
+		
+		btnBorrarArchivo = new JButton("Eliminar");
+
 		btnBorrarArchivo.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnBorrarArchivo.setBackground(new Color(255, 255, 255));
 		btnBorrarArchivo.setForeground(new Color(255, 51, 51));
@@ -312,7 +326,12 @@ public class Dirigente extends JFrame {
 		borradoUsuario.add(nomUsuarioB);
 		nomUsuarioB.setColumns(10);
 
+
 		JButton btnBorrarUsuario = new JButton("Dar de Baja");
+
+		
+		btnBorrarUsuario = new JButton("Dar de Baja");
+
 		btnBorrarUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
 		btnBorrarUsuario.setBackground(new Color(255, 255, 255));
 		btnBorrarUsuario.setForeground(new Color(255, 51, 51));
@@ -384,7 +403,12 @@ public class Dirigente extends JFrame {
 		creacionUsuario.add(correo);
 		correo.setColumns(10);
 
+
 		JButton crearUsu = new JButton("Crear");
+
+		
+		crearUsu = new JButton("Crear");
+
 		crearUsu.setBackground(new Color(255, 255, 255));
 		crearUsu.setForeground(new Color(255, 51, 51));
 		crearUsu.setFont(new Font("Segoe UI", Font.BOLD, 16));
@@ -396,13 +420,26 @@ public class Dirigente extends JFrame {
 		panel.setBounds(15, 16, 352, 355);
 		creacionUsuario.add(panel);
 
+
 		JLabel fondo = new JLabel("");
 		fondo.setIcon(
 				new ImageIcon("C:\\Users\\darku\\Desktop\\Multidisciplinar\\Ventanas\\src\\image\\despachoC.jpg"));
 		fondo.setBounds(0, 0, 603, 510);
 		contentPane.add(fondo);
+		
 		setVisible(true);
-
+		
+		botones.add(crearFichero);
+		botones.add(crearArchivo);
+		botones.add(borrarUsuario);
+		botones.add(borrarArchivo);
+		botones.add(btnCrearArchivo);
+		botones.add(btnCrearFichero);
+		botones.add(btnBorrarArchivo);
+		botones.add(btnBorrarUsuario);
+		botones.add(crearUsu);
+		botones.add(cerrarSesion);
+		
 		crearFichero.addActionListener(new ActionListener() {
 
 			@Override
@@ -492,7 +529,7 @@ public class Dirigente extends JFrame {
 				vaciarTextos();
 			}
 		});
-		btnSalir.addActionListener(new ActionListener() {
+		cerrarSesion.addActionListener(new ActionListener() {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -521,5 +558,11 @@ public class Dirigente extends JFrame {
 		private static void __tmp() {
 			javax.swing.JPanel __wbp_panel = new javax.swing.JPanel();
 		}
+	}
+	public ArrayList<JButton> getBotones() {
+		return botones;
+	}
+	public void setBotones(ArrayList<JButton> botones) {
+		this.botones = botones;
 	}
 }
