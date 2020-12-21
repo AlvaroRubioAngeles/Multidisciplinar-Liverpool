@@ -1,8 +1,8 @@
 package liverpool;
 /**
  * Clase CerrarSesion
- * Descripción: Esta clase se usa para controlar el cierre de sesión del representante.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Esta clase se usa para controlar el cierre de sesiï¿½n del representante.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 17/12/2020
  */
@@ -20,10 +20,10 @@ public class CerrarSesion {
 		this.login = login;
 	}
 	
-	//Método cerrarSesion
-	//Este método le da evento al botón de cerrar sesión, el cuál la finalizara.
+	//Mï¿½todo cerrarSesion
+	//Este mï¿½todo le da evento al botï¿½n de cerrar sesiï¿½n, el cuï¿½l la finalizara.
 	public void cerrarSesion() {
-		repre.getBtnCerrarSesión().addActionListener(new ListenerCerrarSesion(repre, login));
+		repre.getBtnCerrarSesion().addActionListener(new ListenerCerrarSesion(repre, login));
 	}
 
 }

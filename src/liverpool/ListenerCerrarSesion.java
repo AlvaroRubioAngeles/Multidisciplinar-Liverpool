@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  * Clase ListenerCerrarSesion
- * Descripción: Esta clase se usa para controlar el cierre de sesión del representante.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Esta clase se usa para controlar el cierre de sesiï¿½n del representante.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 17/12/2020
  */
@@ -23,10 +23,10 @@ public class ListenerCerrarSesion implements ActionListener {
 		this.login = login;
 	}
 	
-	//Evento del botón cerrar sesion
+	//Evento del botï¿½n cerrar sesion
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		if(e.getSource() == repre.getBtnCerrarSesión()) {
+		if(e.getSource() == repre.getBtnCerrarSesion()) {
 			repre.dispose();
 			login.setVisible(true);
 		}

@@ -35,8 +35,7 @@ public class Dirigente extends JFrame {
 	
 	private JPanel contentPane;
 	private JTextField nombre, apellido, correo, nomUsuarioB, nomArchivoB,campoDestinatario, asunto;
-	private JButton btnCrearArchivo, btnCrearFichero,
-	btnBorrarArchivo, btnBorrarUsuario, crearUsu, cerrarSesion;
+	private JButton cerrarSesion;
 	JTextArea mensaje;
 	
 	private ArrayList<JButton> botones;
@@ -128,7 +127,7 @@ public class Dirigente extends JFrame {
 		menuBar.add(logout);
 		
 
-		cerrarSesion = new JButton("New button");
+		cerrarSesion = new JButton("Salir");
 		cerrarSesion.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		cerrarSesion.setForeground(new Color(255, 255, 255));
 		cerrarSesion.setBackground(new Color(255, 51, 51));
@@ -429,17 +428,6 @@ public class Dirigente extends JFrame {
 		
 		setVisible(true);
 		
-		botones.add(crearFichero);
-		botones.add(crearArchivo);
-		botones.add(borrarUsuario);
-		botones.add(borrarArchivo);
-		botones.add(btnCrearArchivo);
-		botones.add(btnCrearFichero);
-		botones.add(btnBorrarArchivo);
-		botones.add(btnBorrarUsuario);
-		botones.add(crearUsu);
-		botones.add(cerrarSesion);
-		
 		crearFichero.addActionListener(new ActionListener() {
 
 			@Override
@@ -534,6 +522,7 @@ public class Dirigente extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				setVisible(false);
+				L.limpiarTextos();
 				L.setVisible(true);
 				dispose();
 			}

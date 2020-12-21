@@ -26,8 +26,8 @@ import javax.swing.JFileChooser;
 import javax.swing.JScrollPane;
 /**
  * Clase Representante
- * Descripción: Esta ventana es para el representante.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Esta ventana es para el representante.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 14/12/2020
  */
@@ -51,7 +51,7 @@ public class Representante extends JFrame {
 	private JPanel panel_3;
 	private JLabel lblEscudo;
 	private JMenu mnNewMenu_3;
-	private JButton btnCerrarSesión;
+	private JButton btnCerrarSesion;
 
 	/**
 	 * Launch the application.
@@ -134,13 +134,13 @@ public class Representante extends JFrame {
 		mnNewMenu_3.setBackground(new Color(255, 51, 51));
 		menuBar.add(mnNewMenu_3);
 		
-		btnCerrarSesión = new JButton("Cerrar Sesi\u00F3n");
-		btnCerrarSesión.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
-		btnCerrarSesión.setFont(new Font("MV Boli", Font.BOLD, 16));
-		btnCerrarSesión.setForeground(new Color(255, 255, 255));
-		btnCerrarSesión.setBackground(new Color(255, 51, 51));
+		btnCerrarSesion = new JButton("Cerrar Sesi\u00F3n");
+		btnCerrarSesion.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
+		btnCerrarSesion.setFont(new Font("MV Boli", Font.BOLD, 16));
+		btnCerrarSesion.setForeground(new Color(255, 255, 255));
+		btnCerrarSesion.setBackground(new Color(255, 51, 51));
 		
-		mnNewMenu_3.add(btnCerrarSesión);
+		mnNewMenu_3.add(btnCerrarSesion);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -355,11 +355,11 @@ public class Representante extends JFrame {
 		this.cajas = cajas;
 	}
 
-	public JButton getBtnCerrarSesión() {
-		return btnCerrarSesión;
+	public JButton getBtnCerrarSesion() {
+		return btnCerrarSesion;
 	}
 
-	public void setBtnCerrarSesión(JButton btnCerrarSesión) {
-		this.btnCerrarSesión = btnCerrarSesión;
+	public void setBtnCerrarSesion(JButton btnCerrarSesion) {
+		this.btnCerrarSesion = btnCerrarSesion;
 	}
 }
