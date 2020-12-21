@@ -39,8 +39,11 @@ public class ListennerLogin implements ActionListener {
 				if (tipoUsuario.equals("Dirigente")) {
 					// Mostrar nueva ventana
 					L.hacerInvisible();
-					L.limpiarTextos();
 					Dirigente D = new Dirigente(L);
+					for (int i = 0; i < D.getBotones().size(); i++) {	
+						
+						D.getBotones().get(i).addActionListener(new ListenerDirigente(dataOut, dataIn, D, L));
+					}
 					break;
 				} else if (tipoUsuario.equals("Representante")) {
 					// Mostrar nueva ventana
