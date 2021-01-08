@@ -9,9 +9,9 @@ import java.lang.annotation.Repeatable;
 import javax.swing.JOptionPane;
 /**
  * Clase ListenerRepresentante
- * Descripción: Esta clase anade los listeners a los botones de crear contrato y guardar datos, que
+ * Descripciï¿½n: Esta clase anade los listeners a los botones de crear contrato y guardar datos, que
  * se guardan en el fichero.
- * @author Gabriel Vizcaino Sánchez
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 17/12/2020
  */
@@ -33,22 +33,23 @@ public class ListenerRepresentante implements ActionListener {
 		this.repre = repre;
 	}
 
-	//Listener del botón Crear contrato
+	//Listener del botï¿½n Crear contrato
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		repre.getPanel_1().setVisible(false);
 		repre.getLblEscudo().setVisible(false);
 		repre.getPanel_2().setVisible(true);
 		repre.getPanel_3().setVisible(true);
 		repre.getBtnCrear().addActionListener(this);
 		repre.getBtnCrearCont().addActionListener(this);
-		//Listener del botón guardar
+		//Listener del botï¿½n guardar
 		if(e.getSource() == repre.getBtnCrearCont()) {
 			for (int i = 0; i < repre.getCajas().size(); i++) {
 				if (repre.getCajas().get(i).getText().length() == 0) {
-					JOptionPane.showMessageDialog(null, "Error. Los campos no pueden estar vacíos", "Datos contrato", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Error. Los campos no pueden estar vacï¿½os", "Datos contrato", JOptionPane.WARNING_MESSAGE);
 					repre.getCajas().get(i).setText("");
 				} else {
-					//Esta línea guarda los datos en un fichero los datos del contrato del jugador
+					//Esta lï¿½nea guarda los datos en un fichero los datos del contrato del jugador
 					repre.getCajas().get(i).setText("");
 					repre.getLblEscudo().setVisible(true);
 					repre.getPanel_2().setVisible(false);

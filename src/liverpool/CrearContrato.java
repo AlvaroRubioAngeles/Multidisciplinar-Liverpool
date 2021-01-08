@@ -21,9 +21,7 @@ public class CrearContrato {
 	 * @param login - tipo JFrame login
 	 * @param repre - tipo JFrame Representante
 	 */
-	public CrearContrato(DataInputStream dataIn, DataOutputStream dataOut, Representante repre) {
-		this.dataIn = dataIn;
-		this.dataOut = dataOut;
+	public CrearContrato(Representante repre) {
 		this.repre = repre;
 	}
 	

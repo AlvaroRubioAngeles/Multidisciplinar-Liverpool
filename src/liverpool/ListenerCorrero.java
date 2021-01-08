@@ -4,8 +4,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  * Clase ListenerCorreo
- * Descripción: Esta clase se usa para controlar el evento del botón correo.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Esta clase se usa para controlar el evento del botï¿½n correo.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 17/12/2020
  */
@@ -20,14 +20,11 @@ public class ListenerCorrero implements ActionListener {
 		this.repre = repre;
 	}
 	
-	//Evento del botón correo
+	//Evento del botï¿½n correo
 	@Override
 	public void actionPerformed(ActionEvent ae) {
-		if(ae.getSource() == repre.getBtnCorreo()) {
 			repre.getLblEscudo().setVisible(false);
 			repre.getPanel_1().setVisible(true);
-		}
-
 	}
 
 }

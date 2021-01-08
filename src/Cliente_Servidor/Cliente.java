@@ -5,6 +5,8 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 import java.net.UnknownHostException;
+
+import liverpool.AcercaDe;
 import liverpool.login;
 
 public class Cliente {
@@ -30,6 +32,7 @@ public class Cliente {
 		L = new login();
 		// Implementacion de listenner al boton para loggear
 		L.getBtnInicio().addActionListener(new ListennerLogin(dataOut, dataIn, L));
+		AcercaDe AcercaD = new AcercaDe(L);
 	}
 /*
  * Método de conexion al servidor.
@@ -48,8 +51,7 @@ public class Cliente {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
-		
+		return null;	
 	}
 
 }

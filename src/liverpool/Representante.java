@@ -56,6 +56,7 @@ public class Representante extends JFrame {
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -68,6 +69,7 @@ public class Representante extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Crear la ventana de representante.
@@ -148,7 +150,7 @@ public class Representante extends JFrame {
 		
 		lblEscudo = new JLabel("");
 		lblEscudo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEscudo.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\Grado Superior Multiplataforma\\Nueva carpeta\\Trabajo_Multidisciplinar\\src\\image\\liverescudo.jpg"));
+		lblEscudo.setIcon(new ImageIcon(Representante.class.getResource("/image/liverescudo.jpg")));
 		lblEscudo.setBounds(32, 24, 526, 389);
 		contentPane.add(lblEscudo);
 		
@@ -237,9 +239,11 @@ public class Representante extends JFrame {
 		panel_3.add(btnCrearCont);
 		
 		JLabel lblNewLabel = new JLabel("");
-		lblNewLabel.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\Grado Superior Multiplataforma\\Nueva carpeta\\Trabajo_Multidisciplinar\\src\\image\\contrato.jpg"));
+		lblNewLabel.setIcon(new ImageIcon(Representante.class.getResource("/image/contrato.jpg")));
 		lblNewLabel.setBounds(0, 0, 590, 426);
 		contentPane.add(lblNewLabel);
+		
+		setVisible(true);
 	}
 
 	//Getter y Setters
