@@ -60,7 +60,7 @@ public class VentanaRenombre extends JFrame {
 		JLabel nombreActual = new JLabel("-");
 		nombreActual.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		nombreActual.setForeground(new Color(255, 51, 51));
-		nombreActual.setBounds(25, 59, 69, 20);
+		nombreActual.setBounds(25, 59, 336, 20);
 		panelArriba.add(nombreActual);
 		
 		JPanel panelAbajo = new JPanel();
