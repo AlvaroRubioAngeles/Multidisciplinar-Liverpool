@@ -632,4 +632,3 @@ public class Dirigente extends JFrame {
 		conexion.cambiarDirectoriO(ruta);
 	}
 }
-

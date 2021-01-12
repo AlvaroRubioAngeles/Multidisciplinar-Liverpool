@@ -147,8 +147,7 @@ public class login extends JFrame {
 
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setBackground(new Color(255, 51, 51));
-		lblNewLabel.setIcon(new ImageIcon(
-				"C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/escudo.png"));
+		lblNewLabel.setIcon(new ImageIcon(login.class.getResource("/image/escudo.png")));
 		panel_4.add(lblNewLabel);
 
 		JPanel panel_3 = new JPanel();
@@ -165,10 +164,10 @@ public class login extends JFrame {
 		panel_3.add(lblLogin);
 
 		JLabel lblImagenPrincipal = new JLabel("");
-		lblImagenPrincipal.setIcon(new ImageIcon(
-				"C:/Users/fran5/git/Multidisciplinar-Liverpool/src/image/Liverpool.jpg"));
+		lblImagenPrincipal.setIcon(new ImageIcon(login.class.getResource("/image/Liverpool.jpg")));
 		lblImagenPrincipal.setBounds(0, 0, 638, 354);
 		contentPane.add(lblImagenPrincipal);
+		
 		setVisible(true);
 	}
 
@@ -178,7 +177,7 @@ public class login extends JFrame {
 	}
 	
 	public void mostrarError() {
-		JOptionPane.showMessageDialog(null, "Error. Usuario o Contrase�a invalidas", "Inicio de sesi�n",
+		JOptionPane.showMessageDialog(null, "Error. Usuario o Contrase�a invalidas", "Inicio de sesion",
 				JOptionPane.WARNING_MESSAGE);
 	}
 

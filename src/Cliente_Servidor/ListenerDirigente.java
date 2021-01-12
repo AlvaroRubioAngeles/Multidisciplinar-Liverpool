@@ -26,11 +26,6 @@ public class ListenerDirigente implements ActionListener{
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		
-		if (e.getSource() == d.getBotones().get(0)) {
-			System.out.println("Hello");
-		}
-		
-		
+	
 	}
 }

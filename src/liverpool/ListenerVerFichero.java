@@ -4,9 +4,9 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 /**
  * Clase ListenerVerFichero
- * Descripción: Esta clase se usa para controlar al pulsar el botón se visualiza el filechooser que
+ * Descripciï¿½n: Esta clase se usa para controlar al pulsar el botï¿½n se visualiza el filechooser que
  * se encargara de las acciones correspondientes de ver los ficheros.
- * @author Gabriel Vizcaino Sánchez
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 17/12/2020
  */
@@ -20,10 +20,13 @@ public class ListenerVerFichero implements ActionListener {
 		this.repre = repre;
 	}
 	
-	//Evento del botón ver, con lo que se vera el filechooser alojado en el panel_1 de la ventana
-	//Representante, y se buscará el fichero a visualizar subido por el dirigente.
+	//Evento del botï¿½n ver, con lo que se vera el filechooser alojado en el panel_1 de la ventana
+	//Representante, y se buscarï¿½ el fichero a visualizar subido por el dirigente.
 	@Override
 	public void actionPerformed(ActionEvent ae) {
+		repre.getPanel_3().setVisible(false);
+		repre.getPanel_2().setVisible(false);
+		repre.setVisible(true);
 		if(ae.getSource() == repre.getBtnVer()) {
 			repre.getLblEscudo().setVisible(false);
 			repre.getPanel_1().setVisible(true);
