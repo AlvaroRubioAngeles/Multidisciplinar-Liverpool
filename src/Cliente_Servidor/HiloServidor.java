@@ -5,8 +5,6 @@ import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.Socket;
 
-import javax.swing.JOptionPane;
-
 import Conexiones.ConexionBD;
 import Tuberia.Tuberia;
 
@@ -49,7 +47,8 @@ public class HiloServidor extends Thread {
 
 			}
 		} catch (IOException e) {
-			JOptionPane.showMessageDialog(null, "Cliente desconectado");
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 
 	}

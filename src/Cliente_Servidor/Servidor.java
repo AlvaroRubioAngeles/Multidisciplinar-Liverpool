@@ -4,12 +4,7 @@ import java.io.DataInputStream;
 import java.net.ServerSocket;
 import java.net.Socket;
 
-import javax.swing.JDialog;
-import javax.swing.JFrame;
-import javax.swing.JOptionPane;
-
 import Tuberia.Tuberia;
-import liverpool.VentanaError;
 
 public class Servidor {
 
@@ -30,7 +25,7 @@ public class Servidor {
 				Hilo.start();
 			}
 		} catch (Exception e) {
-			VentanaError ventana = new VentanaError("Servidor ya en uso");
+			// TODO: handle exception
 		}
 	}
 
