@@ -5,16 +5,11 @@ import java.awt.event.ActionListener;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
-
-<<<<<<< HEAD
 import liverpool.Representante;
-=======
 import liverpool.CerrarSesion;
 import liverpool.Correo;
 import liverpool.CrearContrato;
-import liverpool.Representante;
 import liverpool.VerArchivos;
->>>>>>> refs/heads/Implementacion-FTP
 import liverpool.login;
 import ventanaDirigente.Dirigente;
 
@@ -48,7 +43,6 @@ public class ListennerLogin implements ActionListener {
 					// Mostrar nueva ventana
 					L.hacerInvisible();
 					Dirigente D = new Dirigente(L);
-<<<<<<< HEAD
 					for (int i = 0; i < D.getBotones().size(); i++) {
 						D.getBotones().get(i).addActionListener(new ListenerDirigente(dataOut, dataIn, D, L));
 					}
@@ -58,7 +52,6 @@ public class ListennerLogin implements ActionListener {
 					L.hacerInvisible();
 					L.limpiarTextos();
 					Representante R = new Representante();
-=======
 					//for (int i = 0; i < D.getBotones().size(); i++) {
 					//	D.getBotones().get(i).addActionListener(new ListenerDirigente(dataOut, dataIn, D, L));
 					//}
@@ -76,7 +69,6 @@ public class ListennerLogin implements ActionListener {
 					crearContrato.botonCrearContrato();
 					VerArchivos Verfich = new VerArchivos(R);
 					Verfich.verFicheros();
->>>>>>> refs/heads/Implementacion-FTP
 					break;
 				}
 				else if (tipoUsuario.equals("*") | tipoUsuario.equals("")) {
