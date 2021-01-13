@@ -1,5 +1,15 @@
 package liverpool;
 
+/*
+ * Author: Álvaro Rubio Ángeles
+ * 
+ * Fecha: 13/01/2021
+ * 
+ * Descripción: Clase que permite abrir el manual entre español e inglés.
+ * 
+ * Versión: 1.0
+ */
+
 import java.io.IOException;
 
 import javax.swing.JOptionPane;
