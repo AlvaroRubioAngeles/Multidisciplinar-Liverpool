@@ -59,19 +59,22 @@ public class Representante extends JFrame {
 	private JPanel panel_3;
 	private JLabel lblEscudo;
 	private JMenu mnNewMenu_3;
-	private JButton btnCerrarSesión;
+	private JButton btnCerrarSesion;
 	private JPanel panel_4;
 	private JPanel panel_5;
+	private JPanel panel_7;
 	private JButton btnRedactar;
 	private JButton btnCerrar;
 	private JPanel panel_6;
 	private JTextField textField;
 	private JTextField textField_1;
+	private JButton btnIniciarSesion;
+	private JButton btnCancelar;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -82,7 +85,7 @@ public class Representante extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Crear la ventana de representante.
@@ -150,13 +153,13 @@ public class Representante extends JFrame {
 		mnNewMenu_3.setBackground(new Color(255, 51, 51));
 		menuBar.add(mnNewMenu_3);
 		
-		btnCerrarSesión = new JButton("Cerrar Sesi\u00F3n");
-		btnCerrarSesión.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
-		btnCerrarSesión.setFont(new Font("MV Boli", Font.BOLD, 16));
-		btnCerrarSesión.setForeground(new Color(255, 255, 255));
-		btnCerrarSesión.setBackground(new Color(255, 51, 51));
+		btnCerrarSesion = new JButton("Cerrar Sesi\u00F3n");
+		btnCerrarSesion.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
+		btnCerrarSesion.setFont(new Font("MV Boli", Font.BOLD, 16));
+		btnCerrarSesion.setForeground(new Color(255, 255, 255));
+		btnCerrarSesion.setBackground(new Color(255, 51, 51));
 		
-		mnNewMenu_3.add(btnCerrarSesión);
+		mnNewMenu_3.add(btnCerrarSesion);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -190,7 +193,7 @@ public class Representante extends JFrame {
 		JScrollPane scrollPane2 = new JScrollPane(panel_6);
 		panel_4.add(scrollPane2);
 		
-		JPanel panel_7 = new JPanel();
+		panel_7 = new JPanel();
 		panel_7.setBackground(Color.WHITE);
 		panel_7.setBounds(115, 29, 600, 505);
 		contentPane.add(panel_7);
@@ -201,7 +204,7 @@ public class Representante extends JFrame {
 		panel_7.add(panel_8, BorderLayout.NORTH);
 		
 		JLabel lblNewLabel_1 = new JLabel("");
-		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\ezgif.com-gif-maker.gif"));
+		lblNewLabel_1.setIcon(new ImageIcon(Representante.class.getResource("/image/escudoanimadoc.gif")));
 		panel_8.add(lblNewLabel_1);
 		
 		JPanel panel_9 = new JPanel();
@@ -209,17 +212,17 @@ public class Representante extends JFrame {
 		panel_7.add(panel_9, BorderLayout.SOUTH);
 		panel_9.setLayout(new GridLayout(2, 1, 0, 3));
 		
-		JButton btnNewButton = new JButton("Iniciar Sesion");
-		btnNewButton.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 15));
-		btnNewButton.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(152, 251, 152)));
-		btnNewButton.setForeground(Color.RED);
-		panel_9.add(btnNewButton);
+		btnIniciarSesion = new JButton("Iniciar Sesion");
+		btnIniciarSesion.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 15));
+		btnIniciarSesion.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(152, 251, 152)));
+		btnIniciarSesion.setForeground(Color.RED);
+		panel_9.add(btnIniciarSesion);
 		
-		JButton btnNewButton_1 = new JButton("Cancelar");
-		btnNewButton_1.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 15));
-		btnNewButton_1.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(152, 251, 152)));
-		btnNewButton_1.setForeground(Color.RED);
-		panel_9.add(btnNewButton_1);
+		btnCancelar = new JButton("Cancelar");
+		btnCancelar.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 15));
+		btnCancelar.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(152, 251, 152)));
+		btnCancelar.setForeground(Color.RED);
+		panel_9.add(btnCancelar);
 		
 		JPanel panel_10 = new JPanel();
 		panel_10.setBackground(Color.RED);
@@ -237,7 +240,7 @@ public class Representante extends JFrame {
 		panel_10.add(textField);
 		textField.setColumns(10);
 		
-		JLabel lblNewLabel_3 = new JLabel("Contrase\u00F1a");
+		JLabel lblNewLabel_3 = new JLabel("Contrasena");
 		lblNewLabel_3.setBorder(new LineBorder(new Color(152, 251, 152), 3));
 		lblNewLabel_3.setForeground(Color.WHITE);
 		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
@@ -249,7 +252,7 @@ public class Representante extends JFrame {
 		textField_1.setColumns(10);
 		lblEscudo = new JLabel("");
 		lblEscudo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEscudo.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\Grado Superior Multiplataforma\\Nueva carpeta\\Trabajo_Multidisciplinar\\src\\image\\liverescudo.jpg"));
+		lblEscudo.setIcon(new ImageIcon(Representante.class.getResource("/image/liverescudo.jpg")));
 		lblEscudo.setBounds(115, 25, 600, 517);
 		contentPane.add(lblEscudo);
 		
@@ -335,13 +338,13 @@ public class Representante extends JFrame {
 		btnCrearCont.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
 		btnCrearCont.setBackground(new Color(255, 51, 51));
 		btnCrearCont.setFont(new Font("Verdana", Font.BOLD, 16));
-		panel_3.add(btnCrearCont);
-		
+		panel_3.add(btnCrearCont);		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(Representante.class.getResource("/image/contrato.jpg")));
 		lblNewLabel.setBounds(0, 0, 830, 567);
 		contentPane.add(lblNewLabel);
+		setVisible(true);		
 	}
 
 	//Getter y Setters
@@ -458,10 +461,74 @@ public class Representante extends JFrame {
 	}
 
 	public JButton getBtnCerrarSesión() {
-		return btnCerrarSesión;
+		return btnCerrarSesion;
 	}
 
 	public void setBtnCerrarSesión(JButton btnCerrarSesión) {
-		this.btnCerrarSesión = btnCerrarSesión;
+		this.btnCerrarSesion = btnCerrarSesión;
+	}
+
+	public JPanel getPanel_7() {
+		return panel_7;
+	}
+
+	public void setPanel_7(JPanel panel_7) {
+		this.panel_7 = panel_7;
+	}
+
+	public JButton getBtnIniciarSesion() {
+		return btnIniciarSesion;
+	}
+
+	public void setBtnIniciarSesion(JButton btnIniciarSesion) {
+		this.btnIniciarSesion = btnIniciarSesion;
+	}
+
+	public JButton getBtnCancelar() {
+		return btnCancelar;
+	}
+
+	public void setBtnCancelar(JButton btnCancelar) {
+		this.btnCancelar = btnCancelar;
+	}
+
+	public JPanel getPanel_4() {
+		return panel_4;
+	}
+
+	public void setPanel_4(JPanel panel_4) {
+		this.panel_4 = panel_4;
+	}
+
+	public JButton getBtnRedactar() {
+		return btnRedactar;
+	}
+
+	public void setBtnRedactar(JButton btnRedactar) {
+		this.btnRedactar = btnRedactar;
+	}
+
+	public JButton getBtnCerrar() {
+		return btnCerrar;
+	}
+
+	public void setBtnCerrar(JButton btnCerrar) {
+		this.btnCerrar = btnCerrar;
+	}
+
+	public JTextField getTextField() {
+		return textField;
+	}
+
+	public void setTextField(JTextField textField) {
+		this.textField = textField;
+	}
+
+	public JTextField getTextField_1() {
+		return textField_1;
+	}
+
+	public void setTextField_1(JTextField textField_1) {
+		this.textField_1 = textField_1;
 	}
 }
