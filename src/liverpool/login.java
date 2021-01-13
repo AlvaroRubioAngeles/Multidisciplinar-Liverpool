@@ -177,8 +177,7 @@ public class login extends JFrame {
 	}
 	
 	public void mostrarError() {
-		JOptionPane.showMessageDialog(null, "Error. Usuario o Contrase�a invalidas", "Inicio de sesion",
-				JOptionPane.WARNING_MESSAGE);
+		VentanaError ventana = new VentanaError("Error. Usuario o Password invalidas");
 	}
 
 	public void hacerInvisible() {
