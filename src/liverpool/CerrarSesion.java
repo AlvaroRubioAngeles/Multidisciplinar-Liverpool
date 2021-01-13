@@ -23,7 +23,7 @@ public class CerrarSesion {
 	//M�todo cerrarSesion
 	//Este m�todo le da evento al bot�n de cerrar sesi�n, el cu�l la finalizara.
 	public void cerrarSesion() {
-		repre.getBtnCerrarSesion().addActionListener(new ListenerCerrarSesion(repre, login));
+		repre.getBtn.addActionListener(new ListenerCerrarSesion(repre, login));
 	}
 
 }

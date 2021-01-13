@@ -460,12 +460,12 @@ public class Representante extends JFrame {
 		this.cajas = cajas;
 	}
 
-	public JButton getBtnCerrarSesión() {
+	public JButton getBtnCerrarSesion() {
 		return btnCerrarSesion;
 	}
 
-	public void setBtnCerrarSesión(JButton btnCerrarSesión) {
-		this.btnCerrarSesion = btnCerrarSesión;
+	public void setBtnCerrarSesion(JButton btnCerrarSesion) {
+		this.btnCerrarSesion = btnCerrarSesion;
 	}
 
 	public JPanel getPanel_7() {
