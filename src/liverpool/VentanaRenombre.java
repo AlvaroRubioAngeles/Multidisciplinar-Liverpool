@@ -6,20 +6,33 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import Conexiones.ConexionFtp;
+
 import java.awt.Color;
 import javax.swing.JButton;
 import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
 public class VentanaRenombre extends JFrame {
-
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	private ConexionFtp conexion;
 	private JPanel contentPane;
 	private JTextField textField;
+	private JLabel nombre;
 
 	/**
 	 * Launch the application.
 	 */
+	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -32,11 +45,13 @@ public class VentanaRenombre extends JFrame {
 			}
 		});
 	}
+	*/
 
 	/**
 	 * Create the frame.
 	 */
-	public VentanaRenombre() {
+	public VentanaRenombre(ConexionFtp conexion,String nombreActualString) {
+		this.conexion = conexion;
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		contentPane = new JPanel();
@@ -57,7 +72,7 @@ public class VentanaRenombre extends JFrame {
 		lblNewLabel.setBounds(15, 16, 368, 20);
 		panelArriba.add(lblNewLabel);
 		
-		JLabel nombreActual = new JLabel("-");
+		JLabel nombreActual = new JLabel(nombreActualString);
 		nombreActual.setFont(new Font("Segoe UI", Font.BOLD, 18));
 		nombreActual.setForeground(new Color(255, 51, 51));
 		nombreActual.setBounds(25, 59, 336, 20);
@@ -69,11 +84,11 @@ public class VentanaRenombre extends JFrame {
 		contentPane.add(panelAbajo);
 		panelAbajo.setLayout(null);
 		
-		JLabel lblNewLabel_1 = new JLabel("Cambiar a:");
-		lblNewLabel_1.setForeground(new Color(255, 51, 51));
-		lblNewLabel_1.setBounds(15, 16, 99, 25);
-		lblNewLabel_1.setFont(new Font("Segoe UI", Font.BOLD, 18));
-		panelAbajo.add(lblNewLabel_1);
+		nombre = new JLabel("Cambiar a:");
+		nombre.setForeground(new Color(255, 51, 51));
+		nombre.setBounds(15, 16, 99, 25);
+		nombre.setFont(new Font("Segoe UI", Font.BOLD, 18));
+		panelAbajo.add(nombre);
 		
 		textField = new JTextField();
 		textField.setBounds(15, 52, 261, 26);
@@ -86,6 +101,13 @@ public class VentanaRenombre extends JFrame {
 		btnRenombrar.setBackground(new Color(255, 255, 255));
 		btnRenombrar.setBounds(313, 133, 100, 46);
 		contentPane.add(btnRenombrar);
+		btnRenombrar.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				conexion.renombrarDocumento(conexion.obtenerDireccionActual(), getNombre());
+			}
+		});
 		
 		JButton btnCancelar = new JButton("Cancel");
 		btnCancelar.setFont(new Font("Segoe UI", Font.BOLD, 16));
@@ -93,5 +115,10 @@ public class VentanaRenombre extends JFrame {
 		btnCancelar.setBackground(new Color(255, 255, 255));
 		btnCancelar.setBounds(313, 184, 100, 44);
 		contentPane.add(btnCancelar);
+		
+		setVisible(true);
+	}
+	public String getNombre() {
+		return nombre.getText();
 	}
 }
