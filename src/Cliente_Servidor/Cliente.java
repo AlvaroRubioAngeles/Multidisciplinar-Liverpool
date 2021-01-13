@@ -39,7 +39,7 @@ public class Cliente {
  * Método de conexion al servidor.
  */
 	private static Socket conectarServidor() throws IOException{
-		String host = "localhost";
+		String host = "192.168.16.135";
 		int puerto = 6000;
 		Socket socket;
 		socket = new Socket(host, puerto);

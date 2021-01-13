@@ -16,6 +16,7 @@ import java.awt.GridLayout;
 import java.util.ArrayList;
 
 import javax.swing.border.TitledBorder;
+import javax.swing.plaf.basic.BasicBorders.MarginBorder;
 import javax.swing.border.MatteBorder;
 import javax.swing.border.CompoundBorder;
 import javax.swing.border.LineBorder;
@@ -24,10 +25,17 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import javax.swing.JFileChooser;
 import javax.swing.JScrollPane;
+import java.awt.Toolkit;
+import java.awt.FlowLayout;
+import javax.swing.BoxLayout;
+import java.awt.Component;
+import javax.swing.JScrollBar;
+import java.awt.ComponentOrientation;
+import javax.swing.ScrollPaneConstants;
 /**
  * Clase Representante
- * Descripciï¿½n: Esta ventana es para el representante.
- * @author Gabriel Vizcaino Sï¿½nchez
+ * Descripción: Esta ventana es para el representante.
+ * @author Gabriel Vizcaino Sánchez
  * @version 1.0
  * Fecha 14/12/2020
  */
@@ -51,12 +59,18 @@ public class Representante extends JFrame {
 	private JPanel panel_3;
 	private JLabel lblEscudo;
 	private JMenu mnNewMenu_3;
-	private JButton btnCerrarSesion;
+	private JButton btnCerrarSesión;
+	private JPanel panel_4;
+	private JPanel panel_5;
+	private JButton btnRedactar;
+	private JButton btnCerrar;
+	private JPanel panel_6;
+	private JTextField textField;
+	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
 	 */
-	/*
 	public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
@@ -69,15 +83,15 @@ public class Representante extends JFrame {
 			}
 		});
 	}
-	*/
 
 	/**
 	 * Crear la ventana de representante.
 	 */
 	public Representante() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Representante.class.getResource("/image/icoes.png")));
 		setTitle("Representante");		
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
-		setBounds(100, 100, 608, 506);
+		setBounds(100, 100, 836, 635);
 		setResizable(false);
 		cajas = new ArrayList<>();
 		JMenuBar menuBar = new JMenuBar();
@@ -136,27 +150,112 @@ public class Representante extends JFrame {
 		mnNewMenu_3.setBackground(new Color(255, 51, 51));
 		menuBar.add(mnNewMenu_3);
 		
-		btnCerrarSesion = new JButton("Cerrar Sesi\u00F3n");
-		btnCerrarSesion.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
-		btnCerrarSesion.setFont(new Font("MV Boli", Font.BOLD, 16));
-		btnCerrarSesion.setForeground(new Color(255, 255, 255));
-		btnCerrarSesion.setBackground(new Color(255, 51, 51));
+		btnCerrarSesión = new JButton("Cerrar Sesi\u00F3n");
+		btnCerrarSesión.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
+		btnCerrarSesión.setFont(new Font("MV Boli", Font.BOLD, 16));
+		btnCerrarSesión.setForeground(new Color(255, 255, 255));
+		btnCerrarSesión.setBackground(new Color(255, 51, 51));
 		
-		mnNewMenu_3.add(btnCerrarSesion);
+		mnNewMenu_3.add(btnCerrarSesión);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 		
+		panel_4 = new JPanel();
+		panel_4.setBounds(115, 29, 600, 505);
+		contentPane.add(panel_4);
+		panel_4.setLayout(new BorderLayout(0, 0));	
+		panel_4.setVisible(false);
+		panel_5 = new JPanel();
+		panel_5.setBackground(Color.WHITE);
+		panel_4.add(panel_5, BorderLayout.NORTH);
+		panel_5.setLayout(new GridLayout(2, 1, 0, 6));		
+		btnRedactar = new JButton("Redactar Correo Nuevo");
+		btnRedactar.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 13));
+		btnRedactar.setBorder(new LineBorder(new Color(144, 238, 144), 3));
+		btnRedactar.setForeground(Color.RED);
+		btnRedactar.setHorizontalAlignment(SwingConstants.CENTER);		
+		panel_5.add(btnRedactar);		
+		btnCerrar = new JButton("Cerrar Sesion");
+		btnCerrar.setFont(new Font("Comic Sans MS", Font.BOLD | Font.ITALIC, 13));
+		btnCerrar.setAlignmentX(Component.RIGHT_ALIGNMENT);
+		btnCerrar.setBorder(new LineBorder(new Color(127, 255, 0), 3));
+		btnCerrar.setForeground(Color.RED);
+		panel_5.add(btnCerrar);		
+		panel_6 = new JPanel();		
+		panel_6.setBackground(Color.WHITE);
+		panel_4.add(panel_6, BorderLayout.CENTER);
+		panel_6.setLayout(new GridLayout(30, 1, 0, 0));
+		JScrollPane scrollPane2 = new JScrollPane(panel_6);
+		panel_4.add(scrollPane2);
+		
+		JPanel panel_7 = new JPanel();
+		panel_7.setBackground(Color.WHITE);
+		panel_7.setBounds(115, 29, 600, 505);
+		contentPane.add(panel_7);
+		panel_7.setLayout(new BorderLayout(0, 6));
+		panel_7.setVisible(false);
+		JPanel panel_8 = new JPanel();
+		panel_8.setBackground(new Color(152, 251, 152));
+		panel_7.add(panel_8, BorderLayout.NORTH);
+		
+		JLabel lblNewLabel_1 = new JLabel("");
+		lblNewLabel_1.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\ezgif.com-gif-maker.gif"));
+		panel_8.add(lblNewLabel_1);
+		
+		JPanel panel_9 = new JPanel();
+		panel_9.setBackground(Color.WHITE);
+		panel_7.add(panel_9, BorderLayout.SOUTH);
+		panel_9.setLayout(new GridLayout(2, 1, 0, 3));
+		
+		JButton btnNewButton = new JButton("Iniciar Sesion");
+		btnNewButton.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 15));
+		btnNewButton.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(152, 251, 152)));
+		btnNewButton.setForeground(Color.RED);
+		panel_9.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("Cancelar");
+		btnNewButton_1.setFont(new Font("Bell MT", Font.BOLD | Font.ITALIC, 15));
+		btnNewButton_1.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(152, 251, 152)));
+		btnNewButton_1.setForeground(Color.RED);
+		panel_9.add(btnNewButton_1);
+		
+		JPanel panel_10 = new JPanel();
+		panel_10.setBackground(Color.RED);
+		panel_7.add(panel_10, BorderLayout.CENTER);
+		panel_10.setLayout(new GridLayout(0, 2, 0, 3));
+		
+		JLabel lblNewLabel_2 = new JLabel("Correo Electronico");
+		lblNewLabel_2.setBorder(new LineBorder(new Color(152, 251, 152), 3));
+		lblNewLabel_2.setFont(new Font("MV Boli", Font.BOLD | Font.ITALIC, 15));
+		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_2.setForeground(Color.WHITE);
+		panel_10.add(lblNewLabel_2);
+		
+		textField = new JTextField();
+		panel_10.add(textField);
+		textField.setColumns(10);
+		
+		JLabel lblNewLabel_3 = new JLabel("Contrase\u00F1a");
+		lblNewLabel_3.setBorder(new LineBorder(new Color(152, 251, 152), 3));
+		lblNewLabel_3.setForeground(Color.WHITE);
+		lblNewLabel_3.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNewLabel_3.setFont(new Font("MV Boli", Font.BOLD | Font.ITALIC, 15));
+		panel_10.add(lblNewLabel_3);
+		
+		textField_1 = new JTextField();
+		panel_10.add(textField_1);
+		textField_1.setColumns(10);
 		lblEscudo = new JLabel("");
 		lblEscudo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEscudo.setIcon(new ImageIcon(Representante.class.getResource("/image/liverescudo.jpg")));
-		lblEscudo.setBounds(32, 24, 526, 389);
+		lblEscudo.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\Grado Superior Multiplataforma\\Nueva carpeta\\Trabajo_Multidisciplinar\\src\\image\\liverescudo.jpg"));
+		lblEscudo.setBounds(115, 25, 600, 517);
 		contentPane.add(lblEscudo);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new MatteBorder(7, 7, 7, 7, (Color) new Color(255, 51, 51)));
-		panel.setBounds(32, 24, 526, 389);
+		panel.setBounds(110, 24, 610, 517);
 		contentPane.add(panel);
 		panel.setLayout(new BorderLayout(0, 0));
 		
@@ -239,11 +338,10 @@ public class Representante extends JFrame {
 		panel_3.add(btnCrearCont);
 		
 		JLabel lblNewLabel = new JLabel("");
+		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(Representante.class.getResource("/image/contrato.jpg")));
-		lblNewLabel.setBounds(0, 0, 590, 426);
+		lblNewLabel.setBounds(0, 0, 830, 567);
 		contentPane.add(lblNewLabel);
-		
-		setVisible(true);
 	}
 
 	//Getter y Setters
@@ -359,11 +457,11 @@ public class Representante extends JFrame {
 		this.cajas = cajas;
 	}
 
-	public JButton getBtnCerrarSesion() {
-		return btnCerrarSesion;
+	public JButton getBtnCerrarSesión() {
+		return btnCerrarSesión;
 	}
 
-	public void setBtnCerrarSesion(JButton btnCerrarSesion) {
-		this.btnCerrarSesion = btnCerrarSesion;
+	public void setBtnCerrarSesión(JButton btnCerrarSesión) {
+		this.btnCerrarSesión = btnCerrarSesión;
 	}
 }
