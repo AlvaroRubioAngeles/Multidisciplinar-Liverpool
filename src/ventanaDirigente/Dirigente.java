@@ -9,6 +9,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
+
+import liverpool.VentanaRenombre;
 import liverpool.login;
 
 import javax.swing.JButton;
@@ -577,10 +579,10 @@ public class Dirigente extends JFrame {
 			}
 		});
 		botonRenombrar.addActionListener(new ActionListener() {
-			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-			//	conexion.renombrarDocumento(conexion.obtenerDireccionActual() + "/" + archivoSeleccionado, nuevoNombre);
+				System.out.println("Tu muela");
+				VentanaRenombre ventanaRenombre = new VentanaRenombre(conexion, archivoSeleccionado);
 			}
 		});
 		
