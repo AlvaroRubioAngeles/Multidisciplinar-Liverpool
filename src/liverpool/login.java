@@ -177,7 +177,7 @@ public class login extends JFrame {
 	}
 	
 	public void mostrarError() {
-		VentanaError ventana = new VentanaError("Error. Usuario o Password invalidas");
+		VentanaError ventana = new VentanaError("Error. Usuario o Password erronea");
 	}
 
 	public void hacerInvisible() {
