@@ -19,11 +19,11 @@ import javax.mail.internet.MimeMessage;
  */
 public class SMTPMail {
 	// Estos son el correo y el nombre de donde quieres que se mande el correo.
-	static final String FROM = "darkuberjackal@gmail.com";
+	static final String FROM = "Sara0234TM@gmail.com";
 	static final String FROMNAME = "Sender Name";
 
 	// Este es el destinatario.
-	static final String TO = "alvaroraneko@gmail.com";
+	static final String TO = "AlfredoRG0987@gmail.com";
 
 	// Host del server SMTP
 	static final String SMTP_USERNAME = "";
