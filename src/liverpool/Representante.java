@@ -59,7 +59,7 @@ public class Representante extends JFrame {
 	private JPanel panel_3;
 	private JLabel lblEscudo;
 	private JMenu mnNewMenu_3;
-	private JButton btnCerrarSesión;
+	private JButton btnCerrarSesion;
 	private JPanel panel_4;
 	private JPanel panel_5;
 	private JButton btnRedactar;
@@ -150,13 +150,13 @@ public class Representante extends JFrame {
 		mnNewMenu_3.setBackground(new Color(255, 51, 51));
 		menuBar.add(mnNewMenu_3);
 		
-		btnCerrarSesión = new JButton("Cerrar Sesi\u00F3n");
-		btnCerrarSesión.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
-		btnCerrarSesión.setFont(new Font("MV Boli", Font.BOLD, 16));
-		btnCerrarSesión.setForeground(new Color(255, 255, 255));
-		btnCerrarSesión.setBackground(new Color(255, 51, 51));
+		btnCerrarSesion = new JButton("Cerrar Sesi\u00F3n");
+		btnCerrarSesion.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
+		btnCerrarSesion.setFont(new Font("MV Boli", Font.BOLD, 16));
+		btnCerrarSesion.setForeground(new Color(255, 255, 255));
+		btnCerrarSesion.setBackground(new Color(255, 51, 51));
 		
-		mnNewMenu_3.add(btnCerrarSesión);
+		mnNewMenu_3.add(btnCerrarSesion);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -458,10 +458,10 @@ public class Representante extends JFrame {
 	}
 
 	public JButton getBtnCerrarSesión() {
-		return btnCerrarSesión;
+		return btnCerrarSesion;
 	}
 
 	public void setBtnCerrarSesión(JButton btnCerrarSesión) {
-		this.btnCerrarSesión = btnCerrarSesión;
+		this.btnCerrarSesion = btnCerrarSesión;
 	}
 }
