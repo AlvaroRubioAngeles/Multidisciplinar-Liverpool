@@ -144,6 +144,7 @@ public class ConexionFtp {
 	}
 	public void renombrarDocumento(String ruta, String nuevoNombre) {
 		try {
+			System.out.println(ruta + "    " + nuevoNombre);
 			ClienteFtp.rename(ruta, nuevoNombre);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block

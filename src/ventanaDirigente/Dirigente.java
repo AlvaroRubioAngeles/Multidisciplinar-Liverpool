@@ -5,6 +5,9 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.event.WindowListener;
 import java.io.File;
 import java.util.ArrayList;
 
@@ -179,34 +182,41 @@ public class Dirigente extends JFrame {
 		JButton botonDescargar = new JButton("Descargar");
 
 		botonDescargar.setBackground(new Color(255, 255, 255));
-		botonDescargar.setForeground(new Color(255, 51, 102));
+		botonDescargar.setForeground(Color.BLACK);
 		botonDescargar.setFont(new Font("Segoe UI", Font.BOLD, 16));
 		botonDescargar.setBounds(830, 502, 153, 50);
 		creacionArchivo.add(botonDescargar);
 
 		JButton botonSubir = new JButton("Subir");
-		botonSubir.setForeground(new Color(255, 51, 51));
+		botonSubir.setFont(new Font("Tahoma", Font.BOLD, 16));
+		botonSubir.setForeground(Color.BLACK);
 		botonSubir.setBounds(830, 565, 153, 50);
 		creacionArchivo.add(botonSubir);
 
-		JButton botonAcceder = new JButton("Acceder Directorio");
+		JButton botonAcceder = new JButton("Acceder");
+		botonAcceder.setActionCommand("Acceder");
+		botonAcceder.setFont(new Font("Tahoma", Font.BOLD, 16));
 		botonAcceder.setEnabled(false);
 		botonAcceder.setBounds(830, 67, 153, 55);
 		creacionArchivo.add(botonAcceder);
 
 		JButton botonBorrar = new JButton("Borrar");
+		botonBorrar.setFont(new Font("Tahoma", Font.BOLD, 16));
 		botonBorrar.setBounds(830, 378, 153, 50);
 		creacionArchivo.add(botonBorrar);
 
 		JButton botonVolver = new JButton("Volver Atrás");
+		botonVolver.setFont(new Font("Tahoma", Font.BOLD, 16));
 		botonVolver.setBounds(830, 135, 155, 61);
 		creacionArchivo.add(botonVolver);
 
 		JButton botonCrear = new JButton("Crear");
+		botonCrear.setFont(new Font("Tahoma", Font.BOLD, 16));
 		botonCrear.setBounds(830, 317, 153, 50);
 		creacionArchivo.add(botonCrear);
 
 		JButton botonRenombrar = new JButton("Renombrar");
+		botonRenombrar.setFont(new Font("Tahoma", Font.BOLD, 16));
 		botonRenombrar.setBounds(830, 439, 153, 50);
 		creacionArchivo.add(botonRenombrar);
 		creacionArchivo.setVisible(false);
@@ -455,10 +465,16 @@ public class Dirigente extends JFrame {
 		fondo.setBounds(0, 0, 1024, 658);
 		contentPane.add(fondo);
 
+		botonAcceder.setEnabled(false);
+		botonSubir.setEnabled(false);
+		botonRenombrar.setEnabled(false);
+		botonDescargar.setEnabled(false);
+		botonBorrar.setEnabled(false);
+		
 		setVisible(true);
 
 		crearArchivo.addActionListener(new ActionListener() {
-			
+
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				creacionFichero.setVisible(false);
@@ -483,8 +499,20 @@ public class Dirigente extends JFrame {
 				if (row >= 0) {
 					if (table.getValueAt(row, 1).equals("Directorio")) {
 						botonAcceder.setEnabled(true);
-
+						botonRenombrar.setEnabled(false);
+						botonSubir.setEnabled(false);
+						botonDescargar.setEnabled(false);
 					} else if (table.getValueAt(row, 1).equals("Fichero")) {
+						botonAcceder.setEnabled(false);
+						botonRenombrar.setEnabled(true);
+						botonDescargar.setEnabled(true);
+						botonBorrar.setEnabled(true);
+					}
+					else {
+						botonSubir.setEnabled(false);
+						botonBorrar.setEnabled(false);
+						botonDescargar.setEnabled(false);
+						botonRenombrar.setEnabled(false);
 						botonAcceder.setEnabled(false);
 					}
 					archivoSeleccionado = (String) table.getValueAt(row, 0);
@@ -569,10 +597,9 @@ public class Dirigente extends JFrame {
 
 		botonBorrar.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent arg0) {
-				if (conexion.borrar(tipoArchivo, conexion.obtenerDireccionActual() + "/" + archivoSeleccionado )) {
+				if (conexion.borrar(tipoArchivo, conexion.obtenerDireccionActual() + "/" + archivoSeleccionado)) {
 					System.out.println("Atchivo borrado correctamente");
-				}
-				else {
+				} else {
 					System.out.println("Error al borrar");
 				}
 				obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
@@ -583,9 +610,52 @@ public class Dirigente extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				System.out.println("Tu muela");
 				VentanaRenombre ventanaRenombre = new VentanaRenombre(conexion, archivoSeleccionado);
+				ventanaRenombre.addWindowListener(new WindowListener() {
+					@Override
+					public void windowClosed(WindowEvent e) {
+					obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
+					}
+
+					@Override
+					public void windowActivated(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowClosing(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowDeactivated(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowDeiconified(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowIconified(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowOpened(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+				});
 			}
 		});
-		
+
 		setResizable(false);
 	}
 
@@ -614,7 +684,7 @@ public class Dirigente extends JFrame {
 		this.botones = botones;
 	}
 
-	private void obtenerListadoArchivos(DefaultTableModel model, String ruta) {
+	public void obtenerListadoArchivos(DefaultTableModel model, String ruta) {
 		FTPFile[] listado = conexion.obtenerListado(ruta);
 		int rows = model.getRowCount() - 1;
 		for (int i = rows; i >= 0; i--) {
