@@ -135,6 +135,54 @@ public class Dirigente extends JFrame {
 		contentPane.add(contenido);
 		contenido.setVisible(false);
 		contenido.setLayout(null);
+		
+				JPanel envioCorreos = new JPanel();
+				envioCorreos.setBackground(new Color(255, 51, 51));
+				envioCorreos.setBounds(0, 0, 995, 628);
+				contenido.add(envioCorreos);
+				envioCorreos.setLayout(null);
+				
+						JLabel lblNewLabel_6 = new JLabel("Destinatario: ");
+						lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 25));
+						lblNewLabel_6.setMinimumSize(new Dimension(82, 16));
+						lblNewLabel_6.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+						lblNewLabel_6.setForeground(new Color(255, 255, 255));
+						lblNewLabel_6.setBounds(12, 13, 165, 65);
+						envioCorreos.add(lblNewLabel_6);
+						
+								JLabel lblNewLabel_7 = new JLabel("Asunto:");
+								lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 25));
+								lblNewLabel_7.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+								lblNewLabel_7.setForeground(new Color(255, 255, 255));
+								lblNewLabel_7.setBounds(12, 91, 165, 64);
+								envioCorreos.add(lblNewLabel_7);
+								
+										JLabel lblNewLabel_8 = new JLabel("Mensaje:");
+										lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 25));
+										lblNewLabel_8.setForeground(new Color(255, 255, 255));
+										lblNewLabel_8.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+										lblNewLabel_8.setBounds(12, 168, 165, 64);
+										envioCorreos.add(lblNewLabel_8);
+										
+												campoDestinatario = new JTextField();
+												campoDestinatario.setBounds(199, 13, 645, 65);
+												envioCorreos.add(campoDestinatario);
+												campoDestinatario.setColumns(10);
+												
+														mensaje = new JTextArea();
+														mensaje.setBounds(12, 245, 832, 370);
+														envioCorreos.add(mensaje);
+														
+																asunto = new JTextField();
+																asunto.setBounds(199, 95, 645, 60);
+																envioCorreos.add(asunto);
+																asunto.setColumns(10);
+																
+																		JButton btnNewButton = new JButton("Enviar");
+																		btnNewButton.setActionCommand("Enviar");
+																		btnNewButton.setBorder(new LineBorder(new Color(255, 255, 255), 2, true));
+																		btnNewButton.setBounds(882, 563, 101, 52);
+																		envioCorreos.add(btnNewButton);
 
 		JPanel creacionArchivo = new JPanel();
 		creacionArchivo.setBackground(new Color(255, 51, 51));
@@ -220,54 +268,6 @@ public class Dirigente extends JFrame {
 		botonRenombrar.setBounds(830, 439, 153, 50);
 		creacionArchivo.add(botonRenombrar);
 		creacionArchivo.setVisible(false);
-
-		JPanel envioCorreos = new JPanel();
-		envioCorreos.setBackground(new Color(255, 51, 51));
-		envioCorreos.setBounds(0, 0, 995, 628);
-		contenido.add(envioCorreos);
-		envioCorreos.setLayout(null);
-
-		JLabel lblNewLabel_6 = new JLabel("Destinatario: ");
-		lblNewLabel_6.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblNewLabel_6.setMinimumSize(new Dimension(82, 16));
-		lblNewLabel_6.setBorder(new LineBorder(new Color(255, 255, 255), 2));
-		lblNewLabel_6.setForeground(new Color(255, 255, 255));
-		lblNewLabel_6.setBounds(12, 13, 165, 65);
-		envioCorreos.add(lblNewLabel_6);
-
-		JLabel lblNewLabel_7 = new JLabel("Asunto:");
-		lblNewLabel_7.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblNewLabel_7.setBorder(new LineBorder(new Color(255, 255, 255), 2));
-		lblNewLabel_7.setForeground(new Color(255, 255, 255));
-		lblNewLabel_7.setBounds(12, 91, 165, 64);
-		envioCorreos.add(lblNewLabel_7);
-
-		JLabel lblNewLabel_8 = new JLabel("Mensaje:");
-		lblNewLabel_8.setFont(new Font("Tahoma", Font.PLAIN, 25));
-		lblNewLabel_8.setForeground(new Color(255, 255, 255));
-		lblNewLabel_8.setBorder(new LineBorder(new Color(255, 255, 255), 2));
-		lblNewLabel_8.setBounds(12, 168, 165, 64);
-		envioCorreos.add(lblNewLabel_8);
-
-		campoDestinatario = new JTextField();
-		campoDestinatario.setBounds(199, 13, 645, 65);
-		envioCorreos.add(campoDestinatario);
-		campoDestinatario.setColumns(10);
-
-		mensaje = new JTextArea();
-		mensaje.setBounds(12, 245, 832, 370);
-		envioCorreos.add(mensaje);
-
-		asunto = new JTextField();
-		asunto.setBounds(199, 95, 645, 60);
-		envioCorreos.add(asunto);
-		asunto.setColumns(10);
-
-		JButton btnNewButton = new JButton("Enviar");
-		btnNewButton.setActionCommand("Enviar");
-		btnNewButton.setBorder(new LineBorder(new Color(255, 255, 255), 2, true));
-		btnNewButton.setBounds(882, 563, 101, 52);
-		envioCorreos.add(btnNewButton);
 
 		JButton btnCrearArchivo1 = new JButton("Crear");
 
