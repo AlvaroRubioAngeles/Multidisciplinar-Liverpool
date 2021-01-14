@@ -36,8 +36,10 @@ public class ListenerRepresentante implements ActionListener {
 	//Listener del bot�n Crear contrato
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		repre.getPanel_1().setVisible(false);
+		repre.getPanel_11().setVisible(false);
 		repre.getLblEscudo().setVisible(false);
+		repre.getPanel_4().setVisible(false);		
+		repre.getPanel_7().setVisible(false);
 		repre.getPanel_2().setVisible(true);
 		repre.getPanel_3().setVisible(true);
 		repre.getBtnCrear().addActionListener(this);

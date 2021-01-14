@@ -50,6 +50,7 @@ import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
+import java.awt.Toolkit;
 
 public class Dirigente extends JFrame {
 	/**
@@ -80,6 +81,7 @@ public class Dirigente extends JFrame {
 	 * Create the frame.
 	 */
 	public Dirigente(login L) {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(Dirigente.class.getResource("/image/icoes.png")));
 
 		setTitle("Dirigente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

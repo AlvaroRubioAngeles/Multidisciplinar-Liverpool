@@ -88,6 +88,7 @@ public class Representante extends JFrame {
 	private JTable table;
 	private JScrollPane scrollPane;
 	private JButton botonDescargar;
+	private JPanel panel_11;
 
 	/**
 	 * Launch the application.
@@ -176,7 +177,13 @@ public class Representante extends JFrame {
 		setContentPane(contentPane);
 		contentPane.setLayout(null);
 
-		JPanel panel_11 = new JPanel();
+		panel_11 = new JPanel();
+		panel_11.setVisible(false);
+		lblEscudo = new JLabel("");
+		lblEscudo.setHorizontalAlignment(SwingConstants.CENTER);
+		lblEscudo.setIcon(new ImageIcon(Representante.class.getResource("/image/liverescudo.jpg")));
+		lblEscudo.setBounds(115, 25, 600, 517);
+		contentPane.add(lblEscudo);
 		panel_11.setBackground(Color.RED);
 		panel_11.setForeground(Color.BLACK);
 		panel_11.setBounds(0, 0, 830, 567);
@@ -240,7 +247,7 @@ public class Representante extends JFrame {
 		botonCrear.setBounds(665, 250, 153, 50);
 		panel_11.add(botonCrear);
 
-		JButton botonVolver = new JButton("Volver Atrás");
+		JButton botonVolver = new JButton("Volver Atras");
 		botonVolver.setFont(new Font("Tahoma", Font.BOLD, 16));
 		botonVolver.setBounds(663, 81, 155, 61);
 		panel_11.add(botonVolver);
@@ -423,11 +430,6 @@ public class Representante extends JFrame {
 		btnCrearCont.setBackground(new Color(255, 51, 51));
 		btnCrearCont.setFont(new Font("Verdana", Font.BOLD, 16));
 		panel_3.add(btnCrearCont);
-		lblEscudo = new JLabel("");
-		lblEscudo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEscudo.setIcon(new ImageIcon(Representante.class.getResource("/image/liverescudo.jpg")));
-		lblEscudo.setBounds(115, 25, 600, 517);
-		contentPane.add(lblEscudo);
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(Representante.class.getResource("/image/contrato.jpg")));
@@ -780,10 +782,16 @@ public class Representante extends JFrame {
 
 	public void setTextField_1(JTextField textField_1) {
 		this.textField_1 = textField_1;
+	}	
+	
+	public JPanel getPanel_11() {
+		return panel_11;
 	}
 
-	
-	
+	public void setPanel_11(JPanel panel_11) {
+		this.panel_11 = panel_11;
+	}
+
 	public void obtenerListadoArchivos(DefaultTableModel model, String ruta) {
 		FTPFile[] listado = conexion.obtenerListado(ruta);
 		int rows = model.getRowCount() - 1;

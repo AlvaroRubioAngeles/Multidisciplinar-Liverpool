@@ -32,6 +32,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenu;
 import java.awt.Component;
 import javax.swing.JPasswordField;
+import java.awt.Toolkit;
 
 /**
  * Clase login Descripci�n: Esta ventana es el inicio de sesi�n de los usuarios.
@@ -52,6 +53,7 @@ public class login extends JFrame {
 	 * Creaci�n de la ventana de login.
 	 */
 	public login() {
+		setIconImage(Toolkit.getDefaultToolkit().getImage(login.class.getResource("/image/icoes.png")));
 		setTitle("You'll never walk alone");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 656, 401);

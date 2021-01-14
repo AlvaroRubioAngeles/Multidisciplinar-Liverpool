@@ -24,7 +24,9 @@ public class ListenerCorrero implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent ae) {
 			repre.getLblEscudo().setVisible(false);
-			repre.getPanel_1().setVisible(true);
+			repre.getPanel_4().setVisible(false);
+			repre.getPanel_11().setVisible(false);
+			repre.getPanel_7().setVisible(true);
 	}
 
 }
