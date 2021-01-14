@@ -34,8 +34,8 @@ import java.awt.ComponentOrientation;
 import javax.swing.ScrollPaneConstants;
 /**
  * Clase Representante
- * Descripción: Esta ventana es para el representante.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Esta ventana es para el representante.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 14/12/2020
  */
@@ -43,7 +43,7 @@ public class Representante extends JFrame {
 
 	private JPanel contentPane;
 	private ArrayList<JTextField> cajas;
-	private JTextField textNombre;
+	private JTextField textNombre, textField_1;
 	private JTextField textApellidos;
 	private JTextField textFechaNaci;
 	private JTextField textAge;
@@ -59,19 +59,18 @@ public class Representante extends JFrame {
 	private JPanel panel_3;
 	private JLabel lblEscudo;
 	private JMenu mnNewMenu_3;
-	private JButton btnCerrarSesión;
+	private JButton btnCerrarSesion;
 	private JPanel panel_4;
 	private JPanel panel_5;
 	private JButton btnRedactar;
 	private JButton btnCerrar;
 	private JPanel panel_6;
 	private JTextField textField;
-	private JTextField textField_1;
 
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -83,7 +82,7 @@ public class Representante extends JFrame {
 			}
 		});
 	}
-
+*/
 	/**
 	 * Crear la ventana de representante.
 	 */
@@ -150,13 +149,13 @@ public class Representante extends JFrame {
 		mnNewMenu_3.setBackground(new Color(255, 51, 51));
 		menuBar.add(mnNewMenu_3);
 		
-		btnCerrarSesión = new JButton("Cerrar Sesi\u00F3n");
-		btnCerrarSesión.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
-		btnCerrarSesión.setFont(new Font("MV Boli", Font.BOLD, 16));
-		btnCerrarSesión.setForeground(new Color(255, 255, 255));
-		btnCerrarSesión.setBackground(new Color(255, 51, 51));
+		btnCerrarSesion = new JButton("Cerrar Sesi\u00F3n");
+		btnCerrarSesion.setBorder(new MatteBorder(2, 2, 2, 2, (Color) new Color(255, 255, 255)));
+		btnCerrarSesion.setFont(new Font("MV Boli", Font.BOLD, 16));
+		btnCerrarSesion.setForeground(new Color(255, 255, 255));
+		btnCerrarSesion.setBackground(new Color(255, 51, 51));
 		
-		mnNewMenu_3.add(btnCerrarSesión);
+		mnNewMenu_3.add(btnCerrarSesion);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 		setContentPane(contentPane);
@@ -249,7 +248,7 @@ public class Representante extends JFrame {
 		textField_1.setColumns(10);
 		lblEscudo = new JLabel("");
 		lblEscudo.setHorizontalAlignment(SwingConstants.CENTER);
-		lblEscudo.setIcon(new ImageIcon("C:\\Users\\gabri\\Desktop\\Grado Superior Multiplataforma\\Nueva carpeta\\Trabajo_Multidisciplinar\\src\\image\\liverescudo.jpg"));
+		lblEscudo.setIcon(new ImageIcon(Representante.class.getResource("/image/liverescudo.jpg")));
 		lblEscudo.setBounds(115, 25, 600, 517);
 		contentPane.add(lblEscudo);
 		
@@ -342,6 +341,8 @@ public class Representante extends JFrame {
 		lblNewLabel.setIcon(new ImageIcon(Representante.class.getResource("/image/contrato.jpg")));
 		lblNewLabel.setBounds(0, 0, 830, 567);
 		contentPane.add(lblNewLabel);
+		
+		setVisible(true);
 	}
 
 	//Getter y Setters
@@ -457,11 +458,11 @@ public class Representante extends JFrame {
 		this.cajas = cajas;
 	}
 
-	public JButton getBtnCerrarSesión() {
-		return btnCerrarSesión;
+	public JButton getBtnCerrarSesion() {
+		return btnCerrarSesion;
 	}
 
-	public void setBtnCerrarSesión(JButton btnCerrarSesión) {
-		this.btnCerrarSesión = btnCerrarSesión;
+	public void setBtnCerrarSesion(JButton btnCerrarSesion) {
+		this.btnCerrarSesion = btnCerrarSesion;
 	}
 }

@@ -470,7 +470,7 @@ public class Dirigente extends JFrame {
 		botonRenombrar.setEnabled(false);
 		botonDescargar.setEnabled(false);
 		botonBorrar.setEnabled(false);
-		
+
 		setVisible(true);
 
 		crearArchivo.addActionListener(new ActionListener() {
@@ -492,6 +492,23 @@ public class Dirigente extends JFrame {
 			}
 
 		});
+		fileArchivo.addActionListener(new ActionListener() {
+
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				if (fileArchivo.getSelectedFile().isDirectory()) {
+					botonAcceder.setEnabled(true);
+					botonRenombrar.setEnabled(false);
+					botonSubir.setEnabled(false);
+					botonDescargar.setEnabled(false);
+				} else if (fileArchivo.getSelectedFile().isFile()) {
+					botonAcceder.setEnabled(false);
+					botonRenombrar.setEnabled(true);
+					botonDescargar.setEnabled(true);
+					botonBorrar.setEnabled(true);
+				}
+			}
+		});
 		table.addMouseListener(new java.awt.event.MouseAdapter() {
 			@Override
 			public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -507,8 +524,7 @@ public class Dirigente extends JFrame {
 						botonRenombrar.setEnabled(true);
 						botonDescargar.setEnabled(true);
 						botonBorrar.setEnabled(true);
-					}
-					else {
+					} else {
 						botonSubir.setEnabled(false);
 						botonBorrar.setEnabled(false);
 						botonDescargar.setEnabled(false);
@@ -520,6 +536,15 @@ public class Dirigente extends JFrame {
 				}
 			}
 		});
+		/*botonCrear.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				VentanaCrearDirectorio ventanaDir = new VentanaCrearDirectorio();
+				ventanaDir.add
+			}
+		});
+		*/
 		botonAcceder.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -608,50 +633,49 @@ public class Dirigente extends JFrame {
 		botonRenombrar.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				System.out.println("Tu muela");
 				VentanaRenombre ventanaRenombre = new VentanaRenombre(conexion, archivoSeleccionado);
 				ventanaRenombre.addWindowListener(new WindowListener() {
 					@Override
 					public void windowClosed(WindowEvent e) {
-					obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
+						obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
 					}
 
 					@Override
 					public void windowActivated(WindowEvent e) {
 						// TODO Auto-generated method stub
-						
+
 					}
 
 					@Override
 					public void windowClosing(WindowEvent e) {
 						// TODO Auto-generated method stub
-						
+
 					}
 
 					@Override
 					public void windowDeactivated(WindowEvent e) {
 						// TODO Auto-generated method stub
-						
+
 					}
 
 					@Override
 					public void windowDeiconified(WindowEvent e) {
 						// TODO Auto-generated method stub
-						
+
 					}
 
 					@Override
 					public void windowIconified(WindowEvent e) {
 						// TODO Auto-generated method stub
-						
+
 					}
 
 					@Override
 					public void windowOpened(WindowEvent e) {
 						// TODO Auto-generated method stub
-						
+
 					}
-					
+
 				});
 			}
 		});

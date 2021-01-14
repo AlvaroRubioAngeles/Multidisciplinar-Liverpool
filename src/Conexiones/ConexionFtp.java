@@ -151,11 +151,14 @@ public class ConexionFtp {
 			e.printStackTrace();
 		}
 	}
-	public void crearDocumento() {
-		
-	}
-	public void crearCarpeta() {
-		
+
+	public void crearCarpeta(String ruta) {
+		try {
+			ClienteFtp.makeDirectory(ruta);
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	public boolean borrar(String tipo, String ruta) {
 		try {

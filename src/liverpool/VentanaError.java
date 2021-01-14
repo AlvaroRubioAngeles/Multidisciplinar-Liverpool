@@ -27,7 +27,7 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 import javax.swing.BoxLayout;
 
 /**
- * Ventana de error Descripción: Ventana que saldra cuando salte un error en el
+ * Ventana de error Descripciï¿½n: Ventana que saldra cuando salte un error en el
  * programa.
  * 
  * @author Gabriel Vizcaino, David Casado, Mario Vega
@@ -41,11 +41,11 @@ public class VentanaError extends JFrame implements ActionListener {
 	private JPanel panel_1;
 	private JLabel lblNewLabel;
 
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					VentanaError frame = new VentanaError("Error.Fallo en la conexión");
+					VentanaError frame = new VentanaError("Error.Fallo en la conexiï¿½n");
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,7 +53,7 @@ public class VentanaError extends JFrame implements ActionListener {
 			}
 		});
 	}
-	
+	*/
 	/**
 	 * Crear la ventana de error.
 	 */
@@ -110,11 +110,11 @@ public class VentanaError extends JFrame implements ActionListener {
 	       }
 
 
-		//setVisible(true);
+		setVisible(true);
 	}
 
 	/*
-	 * Evento del botón aceptar que cierra la ventana del error
+	 * Evento del botï¿½n aceptar que cierra la ventana del error
 	 */
 	@Override
 	public void actionPerformed(ActionEvent arg0) {
