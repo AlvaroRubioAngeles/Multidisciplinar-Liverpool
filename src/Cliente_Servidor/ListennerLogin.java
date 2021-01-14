@@ -54,15 +54,6 @@ public class ListennerLogin implements ActionListener {
 					L.hacerInvisible();
 					L.limpiarTextos();
 					Representante R = new Representante();
-					//for (int i = 0; i < D.getBotones().size(); i++) {
-					//	D.getBotones().get(i).addActionListener(new ListenerDirigente(dataOut, dataIn, D, L));
-					//}
-					break;
-				} else if (tipoUsuario.equals("Representante")) {
-					// Mostrar nueva ventana
-					L.hacerInvisible();
-					L.limpiarTextos();
-					Representante R = new Representante();
 					CerrarSesion CloseSesion = new CerrarSesion(R, L);
 					CloseSesion.cerrarSesion();
 					Correo correo = new Correo(R);

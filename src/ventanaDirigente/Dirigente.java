@@ -5,6 +5,10 @@ import java.awt.Component;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.FocusEvent;
+import java.awt.event.FocusListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.event.WindowListener;
@@ -13,6 +17,7 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
+import liverpool.VentanaError;
 import liverpool.VentanaRenombre;
 import liverpool.login;
 
@@ -43,13 +48,17 @@ import javax.swing.SpinnerListModel;
 import javax.swing.border.EmptyBorder;
 import javax.swing.JTable;
 import java.awt.Dimension;
+import java.awt.event.MouseAdapter;
 
 public class Dirigente extends JFrame {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String archivoSeleccionado, tipoArchivo;
-	private login L;
 	private ConexionFtp conexion;
 	private JPanel contentPane;
-	private JTextField nombre, apellido, correo, nomUsuarioB, nomArchivoB, campoDestinatario, asunto;
+	private JTextField nombre, apellido, correo, campoDestinatario, asunto;
 	private JButton cerrarSesion;
 	JTextArea mensaje;
 
@@ -71,7 +80,6 @@ public class Dirigente extends JFrame {
 	 */
 	public Dirigente(login L) {
 
-		this.L = L;
 		setTitle("Dirigente");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 1028, 720);
@@ -269,129 +277,6 @@ public class Dirigente extends JFrame {
 		btnNewButton.setBounds(882, 563, 101, 52);
 		envioCorreos.add(btnNewButton);
 
-		JButton btnCrearArchivo1 = new JButton("Crear");
-
-		JPanel creacionFichero = new JPanel();
-		creacionFichero.setBackground(new Color(255, 51, 51));
-		creacionFichero.setBounds(0, 0, 556, 387);
-		contenido.add(creacionFichero);
-		creacionFichero.setLayout(null);
-
-		JPanel panel_3 = new JPanel();
-		panel_3.setBackground(Color.WHITE);
-		panel_3.setBounds(15, 16, 357, 355);
-		creacionFichero.add(panel_3);
-		panel_3.setLayout(null);
-
-		JFileChooser fileFichero = new JFileChooser();
-		fileFichero.setBounds(0, 0, 357, 355);
-		panel_3.add(fileFichero);
-
-		JButton btnCrearFichero = new JButton("Crear");
-
-		btnCrearFichero = new JButton("Crear");
-
-		btnCrearFichero.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		btnCrearFichero.setBackground(new Color(255, 255, 255));
-		btnCrearFichero.setForeground(new Color(255, 51, 51));
-		btnCrearFichero.setBounds(388, 16, 153, 41);
-		creacionFichero.add(btnCrearFichero);
-		creacionFichero.setVisible(false);
-
-		JPanel borradoArchivo = new JPanel();
-		borradoArchivo.setBackground(new Color(255, 51, 51));
-		borradoArchivo.setBounds(0, 0, 556, 387);
-		contenido.add(borradoArchivo);
-		borradoArchivo.setLayout(null);
-		borradoArchivo.setVisible(false);
-
-		JLabel lblquArchivoDesea = new JLabel("\u00BFQu\u00E9 archivo desea eliminar?");
-		lblquArchivoDesea.setForeground(new Color(153, 204, 204));
-		lblquArchivoDesea.setFont(new Font("Times New Roman", Font.BOLD, 19));
-		lblquArchivoDesea.setBounds(36, 33, 281, 20);
-		borradoArchivo.add(lblquArchivoDesea);
-
-		JLabel lblNewLabel_5 = new JLabel("Nombre Archivo: ");
-		lblNewLabel_5.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		lblNewLabel_5.setForeground(new Color(255, 51, 51));
-		lblNewLabel_5.setBounds(40, 72, 171, 34);
-		borradoArchivo.add(lblNewLabel_5);
-
-		nomArchivoB = new JTextField();
-		nomArchivoB.setBounds(182, 80, 204, 26);
-		borradoArchivo.add(nomArchivoB);
-		nomArchivoB.setColumns(10);
-
-		JButton btnBorrarArchivo = new JButton("Eliminar");
-
-		btnBorrarArchivo = new JButton("Eliminar");
-
-		btnBorrarArchivo.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnBorrarArchivo.setBackground(new Color(255, 255, 255));
-		btnBorrarArchivo.setForeground(new Color(255, 51, 51));
-		btnBorrarArchivo.setBounds(398, 72, 115, 34);
-		borradoArchivo.add(btnBorrarArchivo);
-
-		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(15, 150, 526, 221);
-		borradoArchivo.add(scrollPane);
-
-		JList listaEliminar = new JList();
-		listaEliminar.setForeground(new Color(255, 51, 51));
-		scrollPane.setViewportView(listaEliminar);
-
-		JPanel panel_1 = new JPanel();
-		panel_1.setBackground(new Color(255, 255, 255));
-		panel_1.setBounds(15, 16, 526, 118);
-		borradoArchivo.add(panel_1);
-
-		JPanel borradoUsuario = new JPanel();
-		borradoUsuario.setBackground(new Color(255, 51, 51));
-		borradoUsuario.setBounds(0, 0, 556, 387);
-		contenido.add(borradoUsuario);
-		borradoUsuario.setLayout(null);
-		borradoUsuario.setVisible(false);
-
-		JLabel lblNewLabel_3 = new JLabel("\u00BFQu\u00E9 usuario desea dar de baja?");
-		lblNewLabel_3.setForeground(new Color(153, 204, 204));
-		lblNewLabel_3.setFont(new Font("Times New Roman", Font.BOLD, 19));
-		lblNewLabel_3.setBounds(33, 34, 281, 20);
-		borradoUsuario.add(lblNewLabel_3);
-
-		JLabel lblNewLabel_4 = new JLabel("Usuario:");
-		lblNewLabel_4.setFont(new Font("Segoe UI", Font.BOLD, 16));
-		lblNewLabel_4.setForeground(new Color(255, 51, 51));
-		lblNewLabel_4.setBounds(42, 79, 98, 20);
-		borradoUsuario.add(lblNewLabel_4);
-
-		nomUsuarioB = new JTextField();
-		nomUsuarioB.setText("");
-		nomUsuarioB.setBounds(117, 77, 275, 26);
-		borradoUsuario.add(nomUsuarioB);
-		nomUsuarioB.setColumns(10);
-
-		JButton btnBorrarUsuario = new JButton("Dar de Baja");
-
-		btnBorrarUsuario = new JButton("Dar de Baja");
-
-		btnBorrarUsuario.setFont(new Font("Tahoma", Font.BOLD, 16));
-		btnBorrarUsuario.setBackground(new Color(255, 255, 255));
-		btnBorrarUsuario.setForeground(new Color(255, 51, 51));
-		btnBorrarUsuario.setBounds(400, 71, 115, 34);
-		borradoUsuario.add(btnBorrarUsuario);
-
-		JScrollPane scrollPane_1 = new JScrollPane();
-		scrollPane_1.setBounds(15, 149, 526, 222);
-		borradoUsuario.add(scrollPane_1);
-
-		JList listaUsuario = new JList();
-		scrollPane_1.setViewportView(listaUsuario);
-
-		JPanel panel_2 = new JPanel();
-		panel_2.setBackground(new Color(255, 255, 255));
-		panel_2.setBounds(15, 16, 526, 116);
-		borradoUsuario.add(panel_2);
-
 		JPanel creacionUsuario = new JPanel();
 		creacionUsuario.setBackground(new Color(255, 51, 51));
 		creacionUsuario.setBounds(0, 0, 556, 387);
@@ -466,7 +351,7 @@ public class Dirigente extends JFrame {
 		contentPane.add(fondo);
 
 		botonAcceder.setEnabled(false);
-		botonSubir.setEnabled(false);
+		botonSubir.setEnabled(true);
 		botonRenombrar.setEnabled(false);
 		botonDescargar.setEnabled(false);
 		botonBorrar.setEnabled(false);
@@ -477,10 +362,7 @@ public class Dirigente extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				creacionFichero.setVisible(false);
 				creacionUsuario.setVisible(false);
-				borradoUsuario.setVisible(false);
-				borradoArchivo.setVisible(false);
 				envioCorreos.setVisible(false);
 				contenido.setVisible(true);
 				creacionArchivo.setVisible(true);
@@ -492,23 +374,7 @@ public class Dirigente extends JFrame {
 			}
 
 		});
-		fileArchivo.addActionListener(new ActionListener() {
 
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				if (fileArchivo.getSelectedFile().isDirectory()) {
-					botonAcceder.setEnabled(true);
-					botonRenombrar.setEnabled(false);
-					botonSubir.setEnabled(false);
-					botonDescargar.setEnabled(false);
-				} else if (fileArchivo.getSelectedFile().isFile()) {
-					botonAcceder.setEnabled(false);
-					botonRenombrar.setEnabled(true);
-					botonDescargar.setEnabled(true);
-					botonBorrar.setEnabled(true);
-				}
-			}
-		});
 		table.addMouseListener(new java.awt.event.MouseAdapter() {
 			@Override
 			public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -536,15 +402,14 @@ public class Dirigente extends JFrame {
 				}
 			}
 		});
-		/*botonCrear.addActionListener(new ActionListener() {
+		
+		botonCrear.addActionListener(new ActionListener() {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				VentanaCrearDirectorio ventanaDir = new VentanaCrearDirectorio();
-				ventanaDir.add
+				
 			}
 		});
-		*/
 		botonAcceder.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -554,9 +419,15 @@ public class Dirigente extends JFrame {
 		botonSubir.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				File fichero = fileArchivo.getSelectedFile();
-				conexion.subirArchivo(fichero);
-				obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
+				try {
+					File fichero = fileArchivo.getSelectedFile();
+					conexion.subirArchivo(fichero);
+					obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
+				} catch (Exception e2) {
+					VentanaError errorSubir = new VentanaError(
+							"No ha seleccionado ningun fichero o ha seleccionado una carpeta");
+				}
+
 			}
 		});
 
@@ -565,12 +436,9 @@ public class Dirigente extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				creacionArchivo.setVisible(false);
-				creacionFichero.setVisible(false);
 				creacionUsuario.setVisible(false);
-				borradoArchivo.setVisible(false);
 				envioCorreos.setVisible(false);
 				contenido.setVisible(true);
-				borradoUsuario.setVisible(true);
 				vaciarTextos();
 			}
 		});
@@ -579,11 +447,8 @@ public class Dirigente extends JFrame {
 			@Override
 			public void actionPerformed(ActionEvent e) {
 				creacionArchivo.setVisible(false);
-				creacionFichero.setVisible(false);
 				creacionUsuario.setVisible(false);
-				borradoUsuario.setVisible(false);
 				contenido.setVisible(false);
-				borradoArchivo.setVisible(false);
 				contenido.setVisible(true);
 				envioCorreos.setVisible(true);
 				vaciarTextos();
@@ -596,6 +461,7 @@ public class Dirigente extends JFrame {
 				setVisible(false);
 				L.limpiarTextos();
 				L.setVisible(true);
+				conexion.desconectarServidor();
 				dispose();
 			}
 		});
@@ -639,43 +505,6 @@ public class Dirigente extends JFrame {
 					public void windowClosed(WindowEvent e) {
 						obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
 					}
-
-					@Override
-					public void windowActivated(WindowEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void windowClosing(WindowEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void windowDeactivated(WindowEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void windowDeiconified(WindowEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void windowIconified(WindowEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
-					@Override
-					public void windowOpened(WindowEvent e) {
-						// TODO Auto-generated method stub
-
-					}
-
 				});
 			}
 		});
@@ -687,17 +516,9 @@ public class Dirigente extends JFrame {
 		nombre.setText("");
 		apellido.setText("");
 		correo.setText("");
-		nomUsuarioB.setText("");
-		nomArchivoB.setText("");
 		asunto.setText("");
 		campoDestinatario.setText("");
 		mensaje.setText("");
-	}
-
-	private static class __Tmp {
-		private static void __tmp() {
-			javax.swing.JPanel __wbp_panel = new javax.swing.JPanel();
-		}
 	}
 
 	public ArrayList<JButton> getBotones() {
