@@ -34,8 +34,8 @@ import java.awt.ComponentOrientation;
 import javax.swing.ScrollPaneConstants;
 /**
  * Clase Representante
- * Descripción: Esta ventana es para el representante.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Esta ventana es para el representante.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 14/12/2020
  */
@@ -71,6 +71,7 @@ public class Representante extends JFrame {
 	private JButton btnIniciarSesion;
 	private JButton btnCancelar;
 
+
 	/**
 	 * Launch the application.
 	 */
@@ -86,7 +87,6 @@ public class Representante extends JFrame {
 			}
 		});
 	}*/
-
 	/**
 	 * Crear la ventana de representante.
 	 */

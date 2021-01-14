@@ -46,7 +46,7 @@ public class ListenerRepresentante implements ActionListener {
 		if(e.getSource() == repre.getBtnCrearCont()) {
 			for (int i = 0; i < repre.getCajas().size(); i++) {
 				if (repre.getCajas().get(i).getText().length() == 0) {
-					JOptionPane.showMessageDialog(null, "Error. Los campos no pueden estar vac�os", "Datos contrato", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showMessageDialog(null, "Error. Los campos no pueden estar vacios", "Datos contrato", JOptionPane.WARNING_MESSAGE);
 					repre.getCajas().get(i).setText("");
 				} else {
 					//Esta l�nea guarda los datos en un fichero los datos del contrato del jugador

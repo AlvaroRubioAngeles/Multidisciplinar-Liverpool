@@ -19,7 +19,7 @@ public class Splash extends JFrame {
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+	/*public static void main(String[] args) {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
@@ -30,7 +30,7 @@ public class Splash extends JFrame {
 				}
 			}
 		});
-	}
+	}*/
 
 	/**
 	 * Create the frame.
@@ -60,6 +60,7 @@ public class Splash extends JFrame {
 		lblNewLabel_2.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel_2.setIcon(new ImageIcon(Splash.class.getResource("/image/pixlr-bg-result.png")));
 		contentPane.add(lblNewLabel_2, BorderLayout.NORTH);
+		setVisible(true);
 	}
 
 }
