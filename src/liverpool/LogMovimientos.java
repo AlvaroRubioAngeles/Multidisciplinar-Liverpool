@@ -20,7 +20,7 @@ public class LogMovimientos {
 			sentencia = (Statement) conexion.createStatement();
 			
 			try {
-				ResultSet resul = sentencia.executeQuery("INSERT INTO movimientos VALUES ()");
+				ResultSet resul = sentencia.executeQuery("INSERT INTO movimientos VALUES (null, " + ")");
 				String tipo = "";
 				while (resul.next()) {
 					tipo = resul.getString(1);
