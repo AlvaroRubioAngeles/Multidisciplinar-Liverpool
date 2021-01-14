@@ -17,6 +17,7 @@ import java.util.ArrayList;
 
 import javax.swing.ImageIcon;
 
+import liverpool.CrearDirectorio;
 import liverpool.VentanaError;
 import liverpool.VentanaRenombre;
 import liverpool.login;
@@ -150,12 +151,6 @@ public class Dirigente extends JFrame {
 		contenido.add(creacionArchivo);
 		creacionArchivo.setLayout(null);
 
-		JFileChooser fileArchivo = new JFileChooser();
-		fileArchivo.setBounds(15, 67, 390, 548);
-		creacionArchivo.add(fileArchivo);
-		fileArchivo.setForeground(new Color(255, 255, 255));
-		fileArchivo.setBackground(new Color(255, 255, 255));
-
 		JLabel lblNewLabel_10 = new JLabel("Servidor FTP");
 		lblNewLabel_10.setFont(new Font("Verdana", Font.BOLD, 35));
 		lblNewLabel_10.setForeground(new Color(255, 255, 255));
@@ -172,6 +167,12 @@ public class Dirigente extends JFrame {
 		panel_4.setBounds(15, 67, 390, 548);
 		creacionArchivo.add(panel_4);
 		panel_4.setLayout(null);
+		
+				JFileChooser fileArchivo = new JFileChooser();
+				fileArchivo.setBounds(0, 0, 390, 548);
+				panel_4.add(fileArchivo);
+				fileArchivo.setForeground(new Color(255, 255, 255));
+				fileArchivo.setBackground(new Color(255, 255, 255));
 
 		JScrollPane ListadoFtp = new JScrollPane();
 		ListadoFtp.setBounds(447, 67, 371, 548);
@@ -407,7 +408,49 @@ public class Dirigente extends JFrame {
 			
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				
+				CrearDirectorio ventanaCrear = new CrearDirectorio(conexion);
+				ventanaCrear.addWindowListener(new WindowListener() {
+					
+					@Override
+					public void windowOpened(WindowEvent e) {
+
+					}
+					
+					@Override
+					public void windowIconified(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowDeiconified(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowDeactivated(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowClosing(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+					
+					@Override
+					public void windowClosed(WindowEvent e) {
+						obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
+					}
+					
+					@Override
+					public void windowActivated(WindowEvent e) {
+						// TODO Auto-generated method stub
+						
+					}
+				});
 			}
 		});
 		botonAcceder.addActionListener(new ActionListener() {
@@ -504,6 +547,42 @@ public class Dirigente extends JFrame {
 					@Override
 					public void windowClosed(WindowEvent e) {
 						obtenerListadoArchivos(model, conexion.obtenerDireccionActual());
+					}
+
+					@Override
+					public void windowActivated(WindowEvent arg0) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowClosing(WindowEvent arg0) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowDeactivated(WindowEvent arg0) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowDeiconified(WindowEvent arg0) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowIconified(WindowEvent arg0) {
+						// TODO Auto-generated method stub
+						
+					}
+
+					@Override
+					public void windowOpened(WindowEvent arg0) {
+						// TODO Auto-generated method stub
+						
 					}
 				});
 			}

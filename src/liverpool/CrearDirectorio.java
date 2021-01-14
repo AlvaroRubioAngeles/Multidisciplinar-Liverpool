@@ -13,17 +13,22 @@ import javax.swing.ImageIcon;
 import java.awt.Color;
 import java.awt.Font;
 import javax.swing.border.LineBorder;
+
+import Conexiones.ConexionFtp;
+
 import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 /**
  * Clase CrearDirectorio
- * Descripción: Ventana para dar nombre a los directorios a crear.
- * @author Gabriel Vizcaino Sánchez
+ * Descripciï¿½n: Ventana para dar nombre a los directorios a crear.
+ * @author Gabriel Vizcaino Sï¿½nchez
  * @version 1.0
  * Fecha 14/01/2021
  *
  */
 public class CrearDirectorio extends JFrame {
-
+	private ConexionFtp conexion;
 	private JPanel contentPane;
 	private JTextField textFieldNombre;
 	private JButton btnAceptarNombre;
@@ -45,7 +50,8 @@ public class CrearDirectorio extends JFrame {
 	/**
 	 * Crear ventana.
 	 */
-	public CrearDirectorio() {
+	public CrearDirectorio(ConexionFtp conexion) {
+		this.conexion = conexion;
 		setIconImage(Toolkit.getDefaultToolkit().getImage(CrearDirectorio.class.getResource("/image/icoes.png")));
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		setBounds(100, 100, 517, 349);
@@ -95,6 +101,22 @@ public class CrearDirectorio extends JFrame {
 		panel_2.add(lblNewLabel_1);
 		setVisible(true);
 		setResizable(false);
+		
+		btnAceptarNombre.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				conexion.crearCarpeta(textFieldNombre.getText());
+				dispose();
+			}
+		});
+		btnCancelarNombre.addActionListener(new ActionListener() {
+			
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				dispose();
+			}
+		});
 	}
 
 	//Getters y Setters

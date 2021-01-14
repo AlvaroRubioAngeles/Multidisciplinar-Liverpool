@@ -29,7 +29,7 @@ public class ListenerVerFichero implements ActionListener {
 		repre.setVisible(true);
 		if(ae.getSource() == repre.getBtnVer()) {
 			repre.getLblEscudo().setVisible(false);
-			repre.getPanel_1().setVisible(true);
+			repre.getPanel_11().setVisible(true);
 			//int result = repre.getFileChooser().showSaveDialog(repre);
 			if(1 == repre.getFileChooser().CANCEL_OPTION) {
 				System.out.println("hola");
