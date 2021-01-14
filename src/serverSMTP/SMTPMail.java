@@ -18,33 +18,43 @@ import javax.mail.internet.MimeMessage;
  * Versión: 1.0
  */
 public class SMTPMail {
-	// Estos son el correo y el nombre de donde quieres que se mande el correo.
-	static final String FROM = "Sara0234TM@gmail.com";
-	static final String FROMNAME = "Sender Name";
 
-	// Este es el destinatario.
-	static final String TO = "AlfredoRG0987@gmail.com";
+	String correoEmi, correoDes, asunto, contenido, nombre;
 
-	// Host del server SMTP
-	static final String SMTP_USERNAME = "";
+	public SMTPMail(String correoEmi, String correoDes, String asunto, String contenido, String nombre)
+			throws Exception {
+		this.correoEmi = correoEmi;
+		this.correoDes = correoDes;
+		this.asunto = asunto;
+		this.contenido = contenido;
+		this.nombre = nombre;
 
-	// Contraseña del server SMTP.
-	static final String SMTP_PASSWORD = "";
+		final String FROM = this.correoEmi;
+		final String FROMNAME = this.nombre;
 
-	static final String CONFIGSET = "ConfigSet";
+		// Este es el destinatario.
+		final String TO = this.correoDes;
 
-	static final String HOST = "localhost";
+		// Host del server SMTP
+		final String SMTP_USERNAME = "";
 
-	// Puerto del SMTP.
-	static final int PORT = 25;
+		// Contraseña del server SMTP.
+		final String SMTP_PASSWORD = "";
 
-	// Asunto del mensaje.
-	static final String SUBJECT = "Pon aquí el asunto";
+		final String CONFIGSET = "ConfigSet";
 
-	// Mensaje.
-	static final String BODY = String.join(System.getProperty("line.separator"), "Aquí el mensaje");
+		final String HOST = "localhost";
 
-	public static void main(String[] args) throws Exception {
+		// Puerto del SMTP.
+		final int PORT = 25;
+
+		// Asunto del mensaje.
+		final String SUBJECT = this.asunto;
+
+		// Mensaje.
+		final String BODY = String.join(System.getProperty("line.separator"), this.contenido);
+
+		// Estos son el correo y el nombre de donde quieres que se mande el correo.
 
 		// Propiedades de la conexión.
 		Properties props = System.getProperties();
@@ -76,9 +86,9 @@ public class SMTPMail {
 			transport.connect(HOST, SMTP_USERNAME, SMTP_PASSWORD);
 
 			transport.sendMessage(msg, msg.getAllRecipients());
-			System.out.println("Email enviado");
+			System.out.println("Email enviado.");
 		} catch (Exception ex) {
-			System.out.println("El email no fue enviado.");
+			System.out.println("El Email no se ha enviado.");
 			System.out.println("Error: " + ex.getMessage());
 		} finally {
 
