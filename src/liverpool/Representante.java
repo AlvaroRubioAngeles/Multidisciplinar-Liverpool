@@ -53,7 +53,7 @@ import Conexiones.ConexionFtp;
  * @version 1.0 Fecha 14/12/2020
  */
 public class Representante extends JFrame {
-
+	private login L;
 	private DefaultTableModel model;
 	private String archivoSeleccionado, tipoArchivo;
 	private ConexionFtp conexion;
@@ -102,7 +102,7 @@ public class Representante extends JFrame {
 	/**
 	 * Crear la ventana de representante.
 	 */
-	public Representante() {
+	public Representante(String nombreUsuario,String pass) {
 		setIconImage(Toolkit.getDefaultToolkit().getImage(Representante.class.getResource("/image/icoes.png")));
 		setTitle("Representante");
 		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
@@ -434,7 +434,12 @@ public class Representante extends JFrame {
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setIcon(new ImageIcon(Representante.class.getResource("/image/contrato.jpg")));
 		lblNewLabel.setBounds(0, 0, 830, 567);
+		botonSubir.setEnabled(true);
 		contentPane.add(lblNewLabel);
+		conexion = new ConexionFtp();
+		conexion.conectarServidor();
+		conexion.iniciarSesion(nombreUsuario, pass);
+		obtenerListadoArchivos(model, "/");
 		table.addMouseListener(new java.awt.event.MouseAdapter() {
 			@Override
 			public void mouseClicked(java.awt.event.MouseEvent evt) {

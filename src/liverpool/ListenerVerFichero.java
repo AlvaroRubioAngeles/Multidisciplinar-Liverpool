@@ -36,7 +36,6 @@ public class ListenerVerFichero implements ActionListener {
 			repre.getPanel_4().setVisible(false);
 			repre.getPanel_7().setVisible(false);
 			repre.getPanel_11().setVisible(true);
-			repre.obtenerListadoArchivos(repre.getModel(), repre.getConexion().obtenerDireccionActual());;
 		}
 
 	}

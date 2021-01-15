@@ -53,7 +53,7 @@ public class ListennerLogin implements ActionListener {
 					// Mostrar nueva ventana
 					L.hacerInvisible();
 					L.limpiarTextos();
-					Representante R = new Representante();
+					Representante R = new Representante(nombreUsuario,pass);
 					CerrarSesion CloseSesion = new CerrarSesion(R, L);
 					CloseSesion.cerrarSesion();
 					Correo correo = new Correo(R);
