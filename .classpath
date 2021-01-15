@@ -6,8 +6,14 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="D:/Users/Fran/Desktop/librerias/com.mysql.jdbc_5.1.5.jar"/>
 	<classpathentry kind="lib" path="D:/Users/Fran/Desktop/librerias/commons-net-3.7.2-bin/commons-net-3.7.2/commons-net-3.7.2.jar"/>
 	<classpathentry kind="lib" path="D:/Users/Fran/Desktop/librerias/javax.mail.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/fran5/Desktop/com.mysql.jdbc_5.1.5.jar/com.mysql.jdbc_5.1.5.jar"/>
+	<classpathentry kind="lib" path="C:/Users/fran5/Downloads/libreriasFTP/commons-net-3.7.2/commons-net-3.7.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/darku/Desktop/Recursos/javax.mail.jar"/>
+>>>>>>> refs/heads/RamaSMTP
 	<classpathentry kind="output" path="bin"/>
 </classpath>
