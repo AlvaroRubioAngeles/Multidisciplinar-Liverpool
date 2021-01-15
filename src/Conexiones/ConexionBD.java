@@ -13,7 +13,7 @@ public class ConexionBD {
 	public ConexionBD() {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			conexion = DriverManager.getConnection("jdbc:mysql://192.168.11.158/liverpool", "Fran", "1");
+			conexion = DriverManager.getConnection("jdbc:mysql://25.74.69.11/liverpool", "Fran", "1");
 			sentencia = conexion.createStatement();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

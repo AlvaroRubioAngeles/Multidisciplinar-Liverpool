@@ -2,6 +2,10 @@ package liverpool;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+
+import javax.swing.table.DefaultTableModel;
+
+import Conexiones.ConexionFtp;
 /**
  * Clase ListenerVerFichero
  * Descripci�n: Esta clase se usa para controlar al pulsar el bot�n se visualiza el filechooser que
@@ -31,7 +35,8 @@ public class ListenerVerFichero implements ActionListener {
 			repre.getLblEscudo().setVisible(false);
 			repre.getPanel_4().setVisible(false);
 			repre.getPanel_7().setVisible(false);
-			repre.getPanel_11().setVisible(true);			
+			repre.getPanel_11().setVisible(true);
+			repre.obtenerListadoArchivos(repre.getModel(), repre.getConexion().obtenerDireccionActual());;
 		}
 
 	}

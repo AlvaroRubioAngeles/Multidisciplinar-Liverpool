@@ -54,6 +54,7 @@ import Conexiones.ConexionFtp;
  */
 public class Representante extends JFrame {
 
+	private DefaultTableModel model;
 	private String archivoSeleccionado, tipoArchivo;
 	private ConexionFtp conexion;
 	private JPanel contentPane;
@@ -89,7 +90,6 @@ public class Representante extends JFrame {
 	private JScrollPane scrollPane;
 	private JButton botonDescargar;
 	private JPanel panel_11;
-
 	/**
 	 * Launch the application.
 	 */
@@ -205,7 +205,7 @@ public class Representante extends JFrame {
 		ListadoFtp.setBounds(331, 81, 312, 473);
 		panel_11.add(ListadoFtp);
 
-		DefaultTableModel model = new DefaultTableModel();
+		model = new DefaultTableModel();
 		table = new JTable(model);
 		model.addColumn("Nombre");
 		model.addColumn("Tipo");
@@ -790,6 +790,23 @@ public class Representante extends JFrame {
 
 	public void setPanel_11(JPanel panel_11) {
 		this.panel_11 = panel_11;
+	}
+	
+	public ConexionFtp getConexion() {
+		return conexion;
+	}
+
+	public void setConexion(ConexionFtp conexion) {
+		this.conexion = conexion;
+	}
+
+	
+	public DefaultTableModel getModel() {
+		return model;
+	}
+
+	public void setModel(DefaultTableModel model) {
+		this.model = model;
 	}
 
 	public void obtenerListadoArchivos(DefaultTableModel model, String ruta) {
