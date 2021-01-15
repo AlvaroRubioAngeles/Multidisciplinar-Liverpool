@@ -3,16 +3,23 @@ package liverpool;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Date;
 
 import com.mysql.jdbc.Connection;
 import com.mysql.jdbc.Statement;
 
 public class LogMovimientos {
 	
+	private int codUsu;
+	private String nombreUsu, tipoUsu;
 	private Connection conexion;
 	private Statement sentencia;
 	
-	public LogMovimientos(int codUsu, String nombreUsu, String tipoUsu) {
+	public LogMovimientos(int codUsu, String nombreUsu, String tipoUsu, String mov) {
+		
+		this.codUsu = codUsu;
+		this.nombreUsu = nombreUsu;
+		this.tipoUsu = tipoUsu;
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -20,7 +27,9 @@ public class LogMovimientos {
 			sentencia = (Statement) conexion.createStatement();
 			
 			try {
-				ResultSet resul = sentencia.executeQuery("INSERT INTO movimientos VALUES (null, " + ")");
+				Date date = new Date();
+				ResultSet resul = sentencia.executeQuery("INSERT INTO movimientos VALUES (null, '" + codUsu +"',"
+						+ " '"+ nombreUsu +"', '" + tipoUsu + "', '" + mov + "', " + date + " )");
 				String tipo = "";
 				while (resul.next()) {
 					tipo = resul.getString(1);
